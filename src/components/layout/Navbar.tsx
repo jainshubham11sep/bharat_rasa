@@ -55,10 +55,10 @@ export default function Navbar() {
             <Image
               src="/images/bharat_innovation_logo.png"
               alt="Bharat Innovations"
-              width={180}
-              height={45}
+              width={400}
+              height={100}
               priority
-              style={{ height: "38px", width: "auto", objectFit: "contain" }}
+              style={{ height: "56px", width: "auto", objectFit: "contain" }}
             />
           </Link>
         </div>
@@ -93,9 +93,9 @@ export default function Navbar() {
               <Image
                 src="/images/bharat_innovation_logo.png"
                 alt="Bharat Innovations"
-                width={160}
-                height={40}
-                style={{ height: "32px", width: "auto", objectFit: "contain" }}
+                width={320}
+                height={80}
+                style={{ height: "48px", width: "auto", objectFit: "contain" }}
               />
             </Link>
           </div>

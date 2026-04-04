@@ -38,9 +38,9 @@ export default function Footer() {
                 <Image
                   src="/images/bharat_innovation_logo.png"
                   alt="Bharat Innovations"
-                  width={220}
-                  height={55}
-                  style={{ height: "48px", width: "auto", objectFit: "contain" }}
+                  width={420}
+                  height={105}
+                  style={{ height: "70px", width: "auto", objectFit: "contain" }}
                 />
               </Link>
             </div>
