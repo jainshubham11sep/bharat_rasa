@@ -24,9 +24,9 @@ export default function ClientsSection() {
                   <Image
                     src={client.logo}
                     alt={`${client.name} logo`}
-                    width={56}
-                    height={56}
-                    style={{ objectFit: "cover" }}
+                    width={140}
+                    height={64}
+                    style={{ objectFit: "contain" }}
                     draggable={false}
                   />
                 </div>
