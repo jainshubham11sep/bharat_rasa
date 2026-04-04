@@ -1,0 +1,67 @@
+import Link from "next/link";
+
+const footerLinks = [
+  { label: "Book a Free Strategy Call", href: "https://gogrowth.in/contact/" },
+  { label: "Privacy Policy", href: "https://gogrowth.in/privacy-policy/" },
+  { label: "Refund & Returns", href: "https://gogrowth.in/refund_returns/" },
+  { label: "Terms & Conditions", href: "https://gogrowth.in/terms-and-condition/" },
+];
+
+const marqueeText = "become the go-to brand in your industry |";
+const marqueeItems = Array(10).fill(marqueeText);
+
+export default function Footer() {
+  return (
+    <footer className="ggfooter">
+      {/* Marquee Banner */}
+      <div className="marquee-wrap">
+        <div className="marquee-outer">
+          <div className="marquee-row">
+            <div className="marquee" aria-hidden="true">
+              {marqueeItems.map((text, i) => (
+                <span key={i} className="item">{text}</span>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {marqueeItems.map((text, i) => (
+                <span key={`dup-${i}`} className="item">{text}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Main Footer Content */}
+        <div className="content">
+          <div className="row">
+            <div className="logo">
+              <Link href="/">
+                <div className="brand">Go Growth</div>
+              </Link>
+            </div>
+
+            <div className="social">
+              <div className="footer-links">
+                {footerLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="copyright">
+        <div className="inner">
+          <p>All rights reserved by Go Growth © {new Date().getFullYear()}</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
