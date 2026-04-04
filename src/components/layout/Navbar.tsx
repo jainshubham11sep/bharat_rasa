@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
 const navLinks = [
@@ -13,7 +14,6 @@ export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const drawerRef = useRef<HTMLElement>(null);
 
-  // Trap focus & handle ESC key inside drawer
   useEffect(() => {
     if (!drawerOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -49,17 +49,21 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Center: Brand (desktop) / DIY button (mobile) */}
+        {/* Center: Logo */}
         <div className="nav-center">
-          <Link href="/" className="brand brand-desktop" aria-label="Bharat Innovations">
-            Bharat Innovations
-          </Link>
-          <Link href="/do-it-yourself" className="btn btn-mobile btn-diy btn-diy-mobile">
-            RASA
+          <Link href="/" className="brand-logo-link" aria-label="Bharat Innovations">
+            <Image
+              src="/images/bharat_innovation_logo.png"
+              alt="Bharat Innovations"
+              width={180}
+              height={45}
+              priority
+              style={{ height: "38px", width: "auto", objectFit: "contain" }}
+            />
           </Link>
         </div>
 
-        {/* Right: DIY (desktop) */}
+        {/* Right: RASA (desktop) */}
         <div className="nav-right">
           <Link href="/do-it-yourself" className="btn btn-desktop btn-diy">
             RASA
@@ -86,7 +90,13 @@ export default function Navbar() {
         <div className="drawer-header">
           <div className="drawer-brand">
             <Link href="/" className="drawer-brand-link" onClick={() => setDrawerOpen(false)}>
-              Bharat Innovations
+              <Image
+                src="/images/bharat_innovation_logo.png"
+                alt="Bharat Innovations"
+                width={160}
+                height={40}
+                style={{ height: "32px", width: "auto", objectFit: "contain" }}
+              />
             </Link>
           </div>
           <button

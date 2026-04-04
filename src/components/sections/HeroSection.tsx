@@ -1,8 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import ContactModal from "@/components/ui/ContactModal";
+
+const ParticleCanvas = dynamic(() => import("@/components/ui/ParticleCanvas"), {
+  ssr: false,
+});
 
 export default function HeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -36,6 +41,8 @@ export default function HeroSection() {
             <path d="M10,20 L30,20 M20,10 L20,30" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </div>
+
+        <ParticleCanvas />
 
         <div className="container">
           <div className="gg-center">

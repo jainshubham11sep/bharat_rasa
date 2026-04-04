@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = [
   { label: "Book a Free Strategy Call", href: "https://gogrowth.in/contact/" },
@@ -34,7 +35,13 @@ export default function Footer() {
           <div className="row">
             <div className="logo">
               <Link href="/">
-                <div className="brand">Go Growth</div>
+                <Image
+                  src="/images/bharat_innovation_logo.png"
+                  alt="Bharat Innovations"
+                  width={220}
+                  height={55}
+                  style={{ height: "48px", width: "auto", objectFit: "contain" }}
+                />
               </Link>
             </div>
 
@@ -59,7 +66,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="copyright">
         <div className="inner">
-          <p>All rights reserved by Go Growth © {new Date().getFullYear()}</p>
+          <p>All rights reserved by Bharat Innovations © {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

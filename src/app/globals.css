@@ -48,7 +48,7 @@ img { max-width: 100%; height: auto; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.25rem;
-  height: 60px;
+  height: 72px;
 }
 
 .nav-left, .nav-right {
@@ -91,6 +91,62 @@ img { max-width: 100%; height: auto; }
   letter-spacing: -0.5px;
 }
 .brand:hover { color: var(--gg-accent); }
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: 4px 0;
+}
+
+/* Rectangular brand logo pill */
+.brand-rect {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 0 0.7rem 0 0.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.brand-rect-icon {
+  position: relative;
+  flex-shrink: 0;
+  display: block;
+  /* portrait image sticks slightly out top/bottom for larger feel */
+  margin: -6px 0;
+}
+
+.brand-rect-divider {
+  width: 1px;
+  height: 60%;
+  background: rgba(255,255,255,0.15);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.brand-rect-text {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.brand-rect-line1 {
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.brand-rect-line2 {
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.01em;
+}
 
 /* Buttons */
 .btn {
