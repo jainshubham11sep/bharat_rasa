@@ -35,7 +35,6 @@ const steps = [
   },
 ];
 
-const accentColor = "#2d4a8f";
 const accentLight = "#5b7fd4";
 
 export default function JewelryHousePage() {
