@@ -1,7 +1,8 @@
 const stats = [
-  { value: "$369,000+", label: "Revenue Generated" },
-  { value: "5.5", label: "Average ROI" },
-  { value: "40+", label: "Successful Campaigns" },
+  { value: "$350,000+", label: "Revenue Generated" },
+  { value: "6X", label: "Average ROI" },
+  { value: "200+", label: "Clients Served" },
+  { value: "40L+", label: "Monthly Ads Spend Managed" },
 ];
 
 export default function StatsSection() {
