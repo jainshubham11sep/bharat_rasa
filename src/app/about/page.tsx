@@ -6,14 +6,6 @@ export const metadata = {
   description: "India's First AI Marketing Agency. We help D2C brands scale profitably using the RASA Framework.",
 };
 
-const team = [
-  {
-    name: "Founder & CEO",
-    role: "Growth Strategist · AI Marketing Expert",
-    bio: "With years of experience scaling D2C brands across India, our founder built the RASA Framework to give every brand a repeatable system for profitable growth.",
-  },
-];
-
 const values = [
   {
     title: "Results First",
