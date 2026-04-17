@@ -3,6 +3,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import CaseStudiesSection from "@/components/sections/CaseStudiesSection";
 import ServicesSection from "@/components/sections/ServicesSection";
+import PressSection from "@/components/sections/PressSection";
 import DashboardSection from "@/components/sections/DashboardSection";
 import HowWeGrowSection from "@/components/sections/HowWeGrowSection";
 import StatsSection from "@/components/sections/StatsSection";
@@ -18,8 +19,9 @@ export default function HomePage() {
       <AboutSection />
       <ClientsSection />
       <CaseStudiesSection />
+      <PressSection />
       <ServicesSection />
-      <DashboardSection />
+      {/* <DashboardSection /> */}
       <HowWeGrowSection />
       <StatsSection />
       <TestimonialsSection />

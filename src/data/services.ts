@@ -2,15 +2,15 @@ import type { Service } from "@/types";
 
 export const services: Service[] = [
   {
-    title: "SEO Specialist",
-    description: "For businesses looking to dominate search results",
+    title: "Social Media Growth",
+    description: "For brands looking to dominate Instagram, Facebook & beyond",
     features: [
-      "Keyword Research & Optimization",
-      "Technical & On-Page SEO Fixes",
-      "Local SEO for U.S. Businesses",
-      "Content Optimization & Blogging",
-      "SEO Reports & Performance Tracking",
-      "One-Time SEO Setup Available",
+      "Instagram & Facebook Page Management",
+      "Content Calendar & Creative Direction",
+      "Reels, Stories & Short-Form Video",
+      "Hashtag Strategy & Organic Reach",
+      "Community Management & Engagement",
+      "Monthly Growth & Analytics Reports",
       "24x7 Support",
     ],
   },

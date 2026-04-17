@@ -1,6 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+
+  --color-accent: #e0a695;
+  --color-gg-green: #22c55e;
+  --color-gg-blue: #3b82f6;
+  --color-gg-yellow: #facc15;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-fast: marquee 15s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
 
 /* ============================================================
    Global Base
@@ -1306,97 +1322,283 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ============================================================
-   TESTIMONIALS (ggtjsx)
+   TESTIMONIALS — YouTube layout
    ============================================================ */
-.ggtjsx {
-  min-height: 100vh;
+.yt-section {
+  width: 100%;
+  padding: 5rem 1.25rem;
+  background: linear-gradient(180deg, #000 0%, #0a0a14 100%);
+  color: #fff;
+}
+
+.yt-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.yt-header {
+  margin-bottom: 2rem;
+}
+
+.yt-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(124,123,255,0.9);
+  margin-bottom: 0.5rem;
+}
+
+.yt-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin: 0;
+}
+
+/* ── Main layout: player left, playlist right ── */
+.yt-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* ── Player ── */
+.yt-player-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.yt-player-wrap {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.yt-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.yt-play-overlay {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 3rem 1rem;
-  background: linear-gradient(180deg, #000 0%, #0a0a14 100%);
-  font-family: 'Inter', system-ui, sans-serif;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  cursor: pointer;
+}
+
+/* Caption bar — single line at bottom like YT subtitles */
+.yt-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 1rem;
+  background: rgba(0,0,0,0.72);
+  display: flex;
+  align-items: center;
+}
+
+.yt-caption-text {
+  font-size: 0.82rem;
+  font-weight: 500;
   color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
 }
-.ggtjsx .wrap {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.ggtjsx .top {
+
+/* Meta row below player */
+.yt-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.ggtjsx .badge span {
+
+.yt-meta-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.yt-meta-role {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.15rem;
+}
+
+.yt-stats-chip {
   display: inline-flex;
-  padding: 0.4rem 1rem;
-  border: 1px solid rgba(138, 124, 255, 0.3);
+  align-items: center;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(124,123,255,0.35);
   border-radius: 9999px;
   font-size: 0.78rem;
   font-weight: 700;
-  color: rgba(190, 200, 255, 0.9);
-  background: rgba(88, 86, 200, 0.12);
-}
-.ggtjsx .controls { display: flex; gap: 0.5rem; }
-.ggtjsx .navbtn {
-  background: rgba(88, 86, 200, 0.15);
-  border: 1px solid rgba(138, 124, 255, 0.25);
-  border-radius: 9999px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #a8a9ff;
-  transition: background 0.3s, box-shadow 0.3s;
-  box-shadow: 0 6px 16px rgba(10, 10, 30, 0.3);
-}
-.ggtjsx .navbtn:hover {
-  background: rgba(110, 100, 220, 0.2);
-  box-shadow: 0 8px 20px rgba(20, 20, 60, 0.4);
-}
-.ggtjsx .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.ggtjsx .quote { margin-bottom: 1.5rem; }
-.ggtjsx .h2 {
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
-  font-weight: 800;
-  line-height: 1.2;
-  margin: 0;
-}
-.ggtjsx .cta { margin-bottom: 2rem; }
-.ggtjsx .chip {
-  display: inline-flex;
-  padding: 0.45rem 1rem;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 9999px;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.75);
+  color: rgba(190,200,255,0.9);
+  background: rgba(88,86,200,0.12);
   text-decoration: none;
-  cursor: pointer;
-  background: none;
-  font-family: inherit;
+  white-space: nowrap;
   transition: background 0.2s;
 }
-.ggtjsx .chip:hover { background: rgba(255,255,255,0.08); }
-.ggtjsx .videoWrap { width: 100%; }
-.ggtjsx .frame {
-  border-radius: 1.5rem;
+.yt-stats-chip:hover { background: rgba(88,86,200,0.22); }
+
+/* ── Playlist ── */
+.yt-playlist-col {
+  display: flex;
+  flex-direction: column;
+  background: #0f0f0f;
+  border-radius: 12px;
   overflow: hidden;
-  background: rgba(15, 15, 35, 0.6);
-  border: 1px solid rgba(138, 124, 255, 0.28);
-  box-shadow: 0 16px 40px rgba(10, 10, 30, 0.4);
+  border: 1px solid rgba(255,255,255,0.07);
+  max-height: 540px;
 }
-.ggtjsx .inner { position: relative; width: 100%; }
-.ggtjsx .inner video {
+
+.yt-playlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+
+.yt-playlist-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.yt-playlist-count {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.yt-playlist {
+  overflow-y: auto;
+  flex: 1;
+}
+.yt-playlist::-webkit-scrollbar { width: 3px; }
+.yt-playlist::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); }
+
+.yt-playlist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
   width: 100%;
-  display: block;
-  max-height: 500px;
+  padding: 0.6rem 0.85rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.yt-playlist-item:hover { background: rgba(255,255,255,0.05); }
+.yt-playlist-item.active { background: rgba(124,123,255,0.12); }
+
+/* Thumbnail */
+.yt-thumb {
+  position: relative;
+  width: 80px;
+  height: 52px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.yt-thumb-video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+/* Playing indicator bars */
+.yt-thumb-playing {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  padding-bottom: 8px;
+}
+.yt-thumb-playing span {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: #7c7bff;
+  animation: ytbar 0.8s ease-in-out infinite alternate;
+}
+.yt-thumb-playing span:nth-child(1) { height: 10px; animation-delay: 0s; }
+.yt-thumb-playing span:nth-child(2) { height: 16px; animation-delay: 0.2s; }
+.yt-thumb-playing span:nth-child(3) { height: 8px; animation-delay: 0.4s; }
+@keyframes ytbar {
+  from { transform: scaleY(0.4); }
+  to   { transform: scaleY(1); }
+}
+
+.yt-playlist-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.yt-playlist-item-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.yt-playlist-item-role {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 0.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.yt-playlist-item-stats {
+  font-size: 0.7rem;
+  color: rgba(124,123,255,0.85);
+  font-weight: 600;
+  margin-top: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .yt-layout { grid-template-columns: 1fr; }
+  .yt-playlist-col { max-height: 380px; }
+}
+
+@media (max-width: 480px) {
+  .yt-section { padding: 3rem 1rem; }
+  .yt-caption-text { font-size: 0.72rem; }
+  .yt-thumb { width: 68px; height: 44px; }
 }
 
 /* ============================================================

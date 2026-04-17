@@ -47,7 +47,7 @@ export default function ServicesSection() {
                     className="gg-sv-btn"
                     onClick={() => setModalOpen(true)}
                   >
-                    Get a Quote
+                    Book a Free Strategy Call
                   </button>
                 </div>
               </div>
