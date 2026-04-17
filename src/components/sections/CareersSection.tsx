@@ -1,11 +1,11 @@
 const openRoles = [
   {
     title: "Performance Marketer",
-    description: "Meta + Google full funnel execution.",
+    description: "Own full-funnel campaigns on Meta & Google. You'll test creatives, scale winners, and be accountable to ROAS — not just ad spend.",
   },
   {
     title: "Shopify / WordPress Developer",
-    description: "Custom builds and CRO optimisation.",
+    description: "Build fast, conversion-focused storefronts and landing pages. You care about UX, speed, and how a page makes someone buy.",
   },
 ];
 
@@ -21,32 +21,30 @@ export default function CareersSection() {
             </div>
 
             <h2 className="gg-careers__title">
-              We Don&apos;t Hire Employees.{" "}
-              <span>We Build Operators.</span>
+              We Don&apos;t Fill Seats.{" "}
+              <span>We Build Growth Operators.</span>
             </h2>
 
             <p className="gg-careers__sub">
-              Bharat Innovations isn&apos;t a typical marketing agency. We build growth systems, scale brands,
-              fix broken funnels, replace bloated SaaS stacks, and make businesses profitable. If
-              you want ownership, responsibility, and real impact, keep reading.
+              At Bharat Innovations, we don&apos;t manage tasks — we own outcomes. Every person on our team runs their domain like a founder would. We move fast, learn from data, and build things that actually scale brands. If that sounds like the environment you&apos;ve been looking for, read on.
             </p>
 
             <ul className="gg-careers__bullets">
               <li>
                 <span className="gg-careers__check"></span>
-                Think in systems, not tasks
+                You think in systems and outcomes, not checklists
               </li>
               <li>
                 <span className="gg-careers__check"></span>
-                Care about outcomes
+                You take initiative without waiting to be told
               </li>
               <li>
                 <span className="gg-careers__check"></span>
-                Take responsibility
+                You thrive when you have real responsibility
               </li>
               <li>
                 <span className="gg-careers__check"></span>
-                Move fast and fix
+                You want to grow with a team that moves at pace
               </li>
             </ul>
           </div>
@@ -55,15 +53,13 @@ export default function CareersSection() {
             <div>
               <h3 className="gg-careers__applyTitle">How to Apply</h3>
               <p className="gg-careers__applyText">
-                Submit your application through our official careers page.
+                Send us a short note about yourself and why you&apos;d be a great fit. We read every application.
               </p>
             </div>
             <div className="gg-careers__btnRow">
               <a
                 className="gg-careers__btn gg-careers__btnPrimary"
-                href="https://gogrowth.co/career/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
               >
                 Apply Now →
               </a>
@@ -87,7 +83,7 @@ export default function CareersSection() {
           <div className="gg-careers__card">
             <h3 className="gg-careers__h3">Why Join</h3>
             <p className="gg-careers__p">
-              Real ownership. Real responsibility. Real growth.
+              You&apos;ll work directly on live brand accounts from day one. No shadowing, no busywork — just real problems, real data, and the freedom to make decisions that move the needle.
             </p>
           </div>
         </div>
@@ -95,7 +91,7 @@ export default function CareersSection() {
         <div className="gg-careers__footer">
           <a
             className="gg-careers__btn gg-careers__btnPrimary"
-            href="https://gogrowth.co/career/"
+            href="/contact"
             target="_blank"
             rel="noopener noreferrer"
           >

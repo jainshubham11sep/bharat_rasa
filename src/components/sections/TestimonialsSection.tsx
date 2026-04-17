@@ -53,8 +53,15 @@ export default function TestimonialsSection() {
     if (!v) return;
     v.pause();
     v.src = testimonials[current].videoUrl;
+    v.loop = false;
     v.load();
     v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+
+    const onEnded = () => {
+      setCurrent(c => (c + 1) % testimonials.length);
+    };
+    v.addEventListener("ended", onEnded);
+    return () => v.removeEventListener("ended", onEnded);
   }, [current]);
 
   const handlePlayPause = () => {
@@ -123,7 +130,6 @@ export default function TestimonialsSection() {
                 src={item.videoUrl}
                 preload="auto"
                 playsInline
-                loop
                 onClick={handlePlayPause}
                 className="yt2-video"
               />
@@ -181,7 +187,7 @@ export default function TestimonialsSection() {
         .yt2-eyebrow {
           display: block; font-size: 0.72rem; font-weight: 700;
           letter-spacing: 0.12em; text-transform: uppercase;
-          color: rgba(124,123,255,0.9); margin-bottom: 0.4rem;
+          color: rgba(224,166,149,0.9); margin-bottom: 0.4rem;
         }
         .yt2-title { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 800; margin: 0; }
 
@@ -231,9 +237,9 @@ export default function TestimonialsSection() {
         .yt2-chip {
           display: inline-flex; align-items: center;
           padding: 0.4rem 0.9rem;
-          border: 1px solid rgba(124,123,255,0.35); border-radius: 9999px;
+          border: 1px solid rgba(224,166,149,0.35); border-radius: 9999px;
           font-size: 0.74rem; font-weight: 700;
-          color: rgba(190,200,255,0.9); background: rgba(88,86,200,0.12);
+          color: rgba(240,200,190,0.95); background: rgba(224,166,149,0.12);
           text-decoration: none; white-space: nowrap;
         }
 
@@ -265,7 +271,7 @@ export default function TestimonialsSection() {
           transition: background 0.15s;
         }
         .yt2-item:hover { background: rgba(255,255,255,0.04); }
-        .yt2-item-active { background: rgba(124,123,255,0.1) !important; }
+        .yt2-item-active { background: rgba(224,166,149,0.1) !important; }
 
         .yt2-thumb {
           position: relative; width: 76px; height: 50px;
@@ -282,11 +288,11 @@ export default function TestimonialsSection() {
           display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; gap: 3px;
         }
         .yt2-bar {
-          display: block; width: 3px; background: #7c7bff; border-radius: 2px;
+          display: block; width: 3px; background: #e0a695; border-radius: 2px;
           animation: ytbar2 0.8s ease-in-out infinite alternate;
         }
         .yt2-thumb-active-overlay {
-          position: absolute; inset: 0; background: rgba(124,123,255,0.28);
+          position: absolute; inset: 0; background: rgba(224,166,149,0.28);
           display: flex; align-items: center; justify-content: center;
         }
         .yt2-item-info { flex: 1; min-width: 0; }
@@ -299,7 +305,7 @@ export default function TestimonialsSection() {
           white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
         .yt2-item-stats {
-          font-size: 0.68rem; color: rgba(124,123,255,0.85); font-weight: 600; margin-top: 3px;
+          font-size: 0.68rem; color: rgba(224,166,149,0.9); font-weight: 600; margin-top: 3px;
           white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
 

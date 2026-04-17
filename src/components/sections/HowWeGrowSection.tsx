@@ -2,19 +2,19 @@ const steps = [
   {
     step: "Step One",
     heading: "Discovery Call",
-    text: "We analyze your business & market to create a strategy while also suggesting SEO and Growth related strategies to help you scale faster.",
+    text: "We go deep into your numbers, audience, and competitive landscape to map out a growth strategy built specifically around your brand — not a recycled template.",
     variant: "gg-hiw-yellow",
   },
   {
     step: "Step Two",
     heading: "Onboarding",
-    text: "We have a clear and simple onboarding process which is then followed by setting up the basic foundations of optimizing your digital presence.",
+    text: "Within 7 days of onboarding we audit your accounts, set up tracking infrastructure, and brief creatives — so we hit the ground running without wasted weeks.",
     variant: "gg-hiw-blue",
   },
   {
     step: "Step Three",
     heading: "Convergence",
-    text: "We launch paid ad campaigns, optimize local and online SEO strategies while also focusing heavily on Conversion Rate Optimization (CRO).",
+    text: "All channels — ads, content, website, and retention — work as one integrated system. We iterate weekly based on data until your brand reaches its growth ceiling, then we raise it.",
     variant: "gg-hiw-red",
   },
 ];

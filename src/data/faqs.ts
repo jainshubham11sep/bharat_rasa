@@ -2,33 +2,38 @@ import type { FAQ } from "@/types";
 
 export const faqs: FAQ[] = [
   {
-    question: "What services do you offer?",
+    question: "What does Bharat Innovations actually do for a brand?",
     answer:
-      "We offer comprehensive digital marketing services including Search Engine Optimization (SEO), Website Development, and Paid Advertising. Each service is tailored to your specific business goals and target audience.",
+      "We build end-to-end growth systems — not just run ads. From paid advertising on Meta and Google, to social media content, website development, and conversion rate optimisation, we take full ownership of what it takes to scale your brand profitably.",
   },
   {
-    question: "What are your pricing structures?",
+    question: "How is Bharat Innovations different from other marketing agencies?",
     answer:
-      "Our pricing is flexible and varies based on the specific services you select, your sales and traffic volume, and the scope of work involved. We offer both monthly retainer packages and one-time project-based pricing.",
+      "Most agencies manage budgets. We manage outcomes. We work inside your funnel — fixing creatives, landing pages, targeting, and retention flows together — using our proprietary RASA Framework to turn ad spend into measurable, compounding revenue.",
   },
   {
-    question: "How long does it take to see results?",
+    question: "How quickly will I see results from paid advertising?",
     answer:
-      "It is a long-term strategy that typically shows initial results within 3 months. However, significant improvements in search rankings, organic traffic, and conversions are generally seen within 6–12 months of consistent effort.",
+      "Most clients see meaningful traction within the first 30–60 days. The first month is about testing and learning what works. By month two, we double down on winners and start scaling. Consistent, profitable growth typically solidifies between months 3 and 6.",
   },
   {
-    question: "Do you offer one-time services or only monthly packages?",
+    question: "Do you work with new brands or only established ones?",
     answer:
-      "We offer both options. Our one-time SEO setup and website development services are perfect for businesses that need a strong foundation, while our monthly packages are ideal for ongoing growth and maintenance.",
+      "Both. We've taken brands from zero to their first ₹5L/month in revenue and we've helped established brands break through plateaus. Our onboarding process is tailored to your current stage so we're always building on what exists, not starting from scratch.",
   },
   {
-    question: "How do you measure the success of your digital marketing campaigns?",
+    question: "What ad platforms do you manage?",
     answer:
-      "We track key performance indicators (KPIs) specific to your business goals, including organic traffic growth, keyword rankings, conversion rates, ROAS, and cost per acquisition. We provide regular detailed reports.",
+      "We manage campaigns across Meta (Facebook & Instagram), Google (Search, Shopping & YouTube), and LinkedIn. We also handle creative production, landing page builds, and retargeting sequences — everything needed for a full-funnel system.",
   },
   {
-    question: "Do you specialize in any particular industries?",
+    question: "How do you report performance and keep us in the loop?",
     answer:
-      "While we work with businesses across various sectors, we have particular expertise in e-commerce, lifestyle brands, and DTC (Direct-to-Consumer) businesses. We've served clients across India, the US, Australia, and UAE.",
+      "You get access to a real-time dashboard plus structured weekly check-ins and monthly deep-dive reports. We track ROAS, CPL, conversion rates, and revenue attribution — no vanity metrics, just what actually drives decisions.",
+  },
+  {
+    question: "Do you require long-term contracts?",
+    answer:
+      "We offer both project-based engagements and monthly retainers. We prefer longer partnerships because compounding results take time, but we earn your trust every month — not through lock-in clauses.",
   },
 ];

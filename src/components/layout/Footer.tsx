@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const footerLinks = [
-  { label: "Book a Free Strategy Call", href: "https://gogrowth.in/contact/" },
-  { label: "Privacy Policy", href: "https://gogrowth.in/privacy-policy/" },
-  { label: "Refund & Returns", href: "https://gogrowth.in/refund_returns/" },
-  { label: "Terms & Conditions", href: "https://gogrowth.in/terms-and-condition/" },
+  { label: "Book a Free Strategy Call", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Refund & Returns", href: "/refund-returns" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
 ];
 
 const marqueeText = "become the go-to brand in your industry |";
@@ -48,14 +48,9 @@ export default function Footer() {
             <div className="social">
               <div className="footer-links">
                 {footerLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link key={link.href} href={link.href}>
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
