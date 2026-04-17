@@ -1695,9 +1695,9 @@ img { max-width: 100%; height: auto; }
   justify-content: center;
   padding: clamp(10px, 1.4vw, 14px) clamp(14px, 2.4vw, 18px);
   border-radius: 9999px;
-  border: 2px solid #facc15;
+  border: 2px solid #0dd3c3;
   background: #0f0f0f;
-  color: #facc15;
+  color: #fff;
   font-size: clamp(12px, 1.2vw, 14px);
   font-weight: 700;
   letter-spacing: 0.08em;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+// Note: form data is passed directly to Calendly via URL params
 
 interface ContactFormState {
   status: "idle" | "submitting" | "success" | "error";
@@ -40,30 +41,25 @@ export default function ContactForm() {
     errorMessage: "",
   });
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setState({ status: "submitting", errorMessage: "" });
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    const payload = Object.fromEntries(data.entries());
+    const name = data.get("from_name") as string;
+    const email = data.get("reply_to") as string;
 
-    try {
-      // Replace with your actual API endpoint
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (res.ok) {
-        setState({ status: "success", errorMessage: "" });
-        form.reset();
-      } else {
-        throw new Error("Server error");
-      }
-    } catch {
-      setState({ status: "error", errorMessage: "Failed to submit the form. Please try again later." });
-    }
+    // Build Calendly URL with prefilled name & email
+    const calendlyBase = "https://calendly.com/bharatinnovations";
+    const params = new URLSearchParams();
+    if (name) params.set("name", name);
+    if (email) params.set("email", email);
+
+    setState({ status: "success", errorMessage: "" });
+    setTimeout(() => {
+      window.location.href = `${calendlyBase}?${params.toString()}`;
+    }, 800);
   }
 
   if (state.status === "success") {
@@ -71,14 +67,7 @@ export default function ContactForm() {
       <div className="ggcontact">
         <div className="ggc-success ggc-alert ggc-alert-success">
           <h3>Thank you!</h3>
-          <p>Your message has been sent successfully. We&apos;ll be in touch soon.</p>
-          <button
-            type="button"
-            className="ggc-again"
-            onClick={() => setState({ status: "idle", errorMessage: "" })}
-          >
-            Send another message
-          </button>
+          <p>Redirecting you to our calendar to pick a date &amp; time...</p>
         </div>
       </div>
     );
@@ -94,11 +83,6 @@ export default function ContactForm() {
         </p>
       </div>
 
-      {state.status === "error" && (
-        <div className="ggc-error ggc-alert ggc-alert-error">
-          <p className="ggc-error-text">{state.errorMessage}</p>
-        </div>
-      )}
 
       <form className="ggc-card ggc-form" onSubmit={handleSubmit} noValidate>
         <input type="hidden" name="currency" value="INR" />

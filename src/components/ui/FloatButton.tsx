@@ -32,7 +32,7 @@ export default function FloatButton() {
       aria-label="Book a Free Strategy Call"
       onClick={() => router.push("/contact")}
     >
-      Book a Free Strategy Call
+      Contact Us
     </button>
   );
 }
