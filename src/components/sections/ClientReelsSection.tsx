@@ -23,15 +23,6 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
 
-  // React's `muted` prop doesn't reliably set the DOM property — do it imperatively on mount
-  const setVideoRef = (el: HTMLVideoElement | null) => {
-    (videoRef as React.MutableRefObject<HTMLVideoElement | null>).current = el;
-    if (el) {
-      el.muted = true;
-      el.defaultMuted = true;
-    }
-  };
-
   useEffect(() => {
     const card = cardRef.current;
     if (!card) return;
@@ -40,14 +31,13 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
         const v = videoRef.current;
         if (!v) return;
         if (entry.isIntersecting) {
-          v.muted = true;
-          v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+          v.play().then(() => setPlaying(true)).catch(() => {});
         } else {
           v.pause();
           setPlaying(false);
         }
       },
-      { threshold: 0.25 }  // lower threshold for tall 9:16 cards on small screens
+      { threshold: 0.5 }
     );
     observer.observe(card);
     return () => observer.disconnect();
@@ -68,11 +58,12 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
   return (
     <div className="cr-card" ref={cardRef}>
       <video
-        ref={setVideoRef}
+        ref={videoRef}
         src={src}
+        muted
         playsInline
         loop
-        preload="auto"
+        preload="metadata"
         onClick={togglePlay}
         className="cr-video"
       />

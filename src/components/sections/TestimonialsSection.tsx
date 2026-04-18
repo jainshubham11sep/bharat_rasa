@@ -48,12 +48,6 @@ export default function TestimonialsSection() {
   const [sectionVisible, setSectionVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-
-  // React's `muted` prop doesn't reliably set the DOM property — do it imperatively
-  const setVideoRef = (el: HTMLVideoElement | null) => {
-    (videoRef as React.MutableRefObject<HTMLVideoElement | null>).current = el;
-    if (el) { el.muted = true; el.defaultMuted = true; }
-  };
   const thumbs = useThumbnails();
   const item = testimonials[current];
 
@@ -67,7 +61,6 @@ export default function TestimonialsSection() {
         const v = videoRef.current;
         if (!v) return;
         if (entry.isIntersecting) {
-          v.muted = true;
           v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
         } else {
           v.pause();
@@ -176,10 +169,11 @@ export default function TestimonialsSection() {
           <div className="yt2-player-col">
             <div className="yt2-player-wrap">
               <video
-                ref={setVideoRef}
+                ref={videoRef}
                 src={item.videoUrl}
                 preload="auto"
                 playsInline
+                muted
                 onClick={handlePlayPause}
                 className="yt2-video"
               />
