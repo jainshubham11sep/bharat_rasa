@@ -69,7 +69,6 @@ Thumbs.db
 
 .local
 
-# Large media files — host on CDN instead (only exclude files >100MB)
-public/media/IMG_1606.MP4
+# Large media files — host on CDN instead
 public/media/*.mov
 public/media/*.MOV

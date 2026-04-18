@@ -8,8 +8,7 @@ const reels = [
     caption: "Working with Bharat Innovations transformed our entire marketing approach — our sales doubled in 3 months!",
   },
   {
-    // IMG_1606.MP4 is 172MB — too large for git. Using committed testimonial video instead.
-    src: "/media/IMG_4070.MP4",
+    src: "/media/IMG_1606.MP4",
     caption: "The team at Bharat Innovations really understands e-commerce. Our ROAS went from 1.8x to 4.5x in just 60 days.",
   },
   {
