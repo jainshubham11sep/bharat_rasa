@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const reels = [
   {
@@ -18,47 +18,26 @@ const reels = [
 ];
 
 function ReelCard({ src, caption }: { src: string; caption: string }) {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
 
-  // React's `muted` JSX prop does NOT set the DOM property on mobile browsers.
-  // Must use a ref callback to imperatively set el.muted before any play() call.
-  const assignVideoRef = useCallback((el: HTMLVideoElement | null) => {
-    videoRef.current = el;
-    if (!el) return;
-    el.muted = true;
-    el.defaultMuted = true;
-    el.setAttribute("muted", "");
-    el.setAttribute("playsinline", "");
-    el.setAttribute("webkit-playsinline", "");
-  }, []);
-
   useEffect(() => {
     const card = cardRef.current;
     if (!card) return;
-
-    const tryPlay = (v: HTMLVideoElement) => {
-      v.muted = true; // enforce muted right before play — required by mobile browsers
-      const p = v.play();
-      if (p !== undefined) {
-        p.then(() => setPlaying(true)).catch(() => setPlaying(false));
-      }
-    };
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         const v = videoRef.current;
         if (!v) return;
         if (entry.isIntersecting) {
-          tryPlay(v);
+          v.play().then(() => setPlaying(true)).catch(() => {});
         } else {
           v.pause();
           setPlaying(false);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.5 }
     );
     observer.observe(card);
     return () => observer.disconnect();
@@ -72,24 +51,19 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
-    if (v.paused) {
-      v.muted = muted;
-      v.play().then(() => setPlaying(true)).catch(() => {});
-    } else {
-      v.pause();
-      setPlaying(false);
-    }
+    if (v.paused) { v.play().then(() => setPlaying(true)).catch(() => {}); }
+    else { v.pause(); setPlaying(false); }
   };
 
   return (
     <div className="cr-card" ref={cardRef}>
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video
-        ref={assignVideoRef}
+        ref={videoRef}
         src={src}
+        muted
         playsInline
         loop
-        preload="auto"
+        preload="metadata"
         onClick={togglePlay}
         className="cr-video"
       />
@@ -99,14 +73,12 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
         <p className="cr-caption">&ldquo;{caption}&rdquo;</p>
       </div>
 
-      {/* Play/pause overlay — shown when paused */}
+      {/* Play/pause overlay */}
       {!playing && (
         <button onClick={togglePlay} className="cr-play-btn" aria-label="Play">
-          <div className="cr-play-circle">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-          </div>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
         </button>
       )}
 
@@ -141,7 +113,7 @@ export default function ClientReelsSection() {
         <div className="cr-header">
           <span className="cr-eyebrow">Testimonials</span>
           <h2 className="cr-title">What Clients Say About Us</h2>
-          <p className="cr-sub">Real words from real brands we&apos;ve helped grow.</p>
+          <p className="cr-sub">Real words from real brands we've helped grow.</p>
         </div>
         <div className="cr-grid">
           {reels.map((r, i) => (
@@ -211,15 +183,11 @@ export default function ClientReelsSection() {
           display: flex; align-items: center; justify-content: center;
           background: rgba(0,0,0,0.3); border: none; cursor: pointer;
         }
-        .cr-play-circle {
-          width: 56px; height: 56px; border-radius: 50%;
-          background: rgba(255,255,255,0.18); backdrop-filter: blur(6px);
-          display: flex; align-items: center; justify-content: center;
-        }
+        .cr-play-btn svg { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6)); }
 
         .cr-mute-btn {
           position: absolute; top: 0.75rem; right: 0.75rem;
-          width: 34px; height: 34px; border-radius: 50%;
+          width: 32px; height: 32px; border-radius: 50%;
           background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2);
           display: flex; align-items: center; justify-content: center;
           cursor: pointer; z-index: 10; backdrop-filter: blur(4px);
