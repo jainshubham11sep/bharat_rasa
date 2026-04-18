@@ -68,3 +68,9 @@ Thumbs.db
 # Optional: local config
 
 .local
+
+# Large media files — host on CDN instead
+public/media/*.MP4
+public/media/*.mp4
+public/media/*.mov
+public/media/*.MOV

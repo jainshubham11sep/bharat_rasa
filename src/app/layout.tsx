@@ -19,33 +19,65 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bharat-innovations.com"),
-  title: "Bharat Innovations - Digital Marketing Agency",
+  metadataBase: new URL("https://bharatinnovations.com"),
+  title: {
+    default: "Bharat Innovations — AI-Powered Performance Marketing Agency for D2C & eCommerce Brands",
+    template: "%s | Bharat Innovations",
+  },
   description:
-    "Bharat Innovations is a Performance marketing agency for D2C and eCommerce brands. We specialize in SEO, website development, and paid advertising.",
+    "Bharat Innovations is India's leading AI-powered performance marketing agency helping D2C and eCommerce brands achieve 6x–8x ROAS. We specialize in Paid Advertising (Meta & Google), Social Media Growth, Web Development, SEO, AI Automation, Influencer Marketing, and Creative Strategy using our proprietary RASA Framework.",
   keywords: [
-    "digital marketing agency",
-    "SEO",
-    "paid advertising",
-    "DTC marketing",
-    "ecommerce growth",
     "Bharat Innovations",
+    "AI marketing agency India",
+    "performance marketing agency",
+    "D2C marketing agency",
+    "eCommerce marketing agency",
+    "paid advertising agency India",
+    "Meta ads agency",
+    "Google ads agency",
+    "ROAS optimization",
+    "social media marketing agency",
+    "Shopify marketing agency",
+    "influencer marketing India",
+    "SEO agency India",
+    "AI automation marketing",
+    "creative strategy agency",
+    "ecommerce growth agency",
+    "RASA Framework",
+    "jewellery brand marketing",
+    "fashion brand marketing",
+    "D2C growth agency India",
   ],
+  authors: [{ name: "Bharat Innovations" }],
+  creator: "Bharat Innovations",
+  publisher: "Bharat Innovations",
   openGraph: {
-    title: "Bharat Innovations - Digital Marketing Agency",
+    title: "Bharat Innovations — AI-Powered Performance Marketing for D2C & eCommerce",
     description:
-      "One Dashboard. All the Growth You Need. Ad audits, SEO strategy, content ideas, and a clear monthly growth plan.",
-    url: "https://bharat-innovations.com/",
+      "Struggling with poor ROAS and inconsistent sales? Bharat Innovations' RASA Framework delivers 6x–8x ROAS and 50%+ order growth for D2C and eCommerce brands across India. Paid Ads, SEO, Web Dev, AI Automation — all under one roof.",
+    url: "https://bharatinnovations.com/",
     siteName: "Bharat Innovations",
-    images: [{ url: "/images/MARKETING-agency-2.png" }],
+    images: [
+      {
+        url: "/images/MARKETING-agency-2.png",
+        width: 1200,
+        height: 630,
+        alt: "Bharat Innovations — AI-Powered Performance Marketing Agency",
+      },
+    ],
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bharat Innovations - Digital Marketing Agency",
+    title: "Bharat Innovations — 6x–8x ROAS for D2C & eCommerce Brands",
     description:
-      "Performance marketing agency for D2C & eCommerce brands.",
+      "India's AI-powered performance marketing agency. Meta & Google Ads, SEO, Social Media, Web Dev & AI Automation — powered by the RASA Framework.",
     images: ["/images/MARKETING-agency-2.png"],
+    creator: "@bharatinnovations",
+  },
+  alternates: {
+    canonical: "https://bharatinnovations.com",
   },
   robots: {
     index: true,
@@ -54,8 +86,11 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
+  category: "Marketing Agency",
 };
 
 export default function RootLayout({

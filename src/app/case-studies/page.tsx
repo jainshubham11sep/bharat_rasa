@@ -1,6 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/data/caseStudies";
+
+export const metadata: Metadata = {
+  title: "Case Studies — Real Results for D2C & eCommerce Brands | Bharat Innovations",
+  description:
+    "Explore how Bharat Innovations helped D2C and eCommerce brands achieve 6x–8x ROAS, ₹2 CPL, and 50%+ order growth using the RASA Framework. Real campaigns. Real results.",
+  openGraph: {
+    title: "Case Studies — Real Results for D2C & eCommerce Brands | Bharat Innovations",
+    description:
+      "See how Indian D2C and eCommerce brands scaled profitably with Bharat Innovations — jewellery, fashion, lifestyle and more.",
+  },
+};
 
 const colorMap: Record<string, string> = {
   green: "#4ade80",

@@ -33,8 +33,8 @@ export async function POST(req: NextRequest) {
     // Example with Resend:
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: 'Bharat Innovations <noreply@gogrowth.co>',
-    //   to: ['hello@gogrowth.co'],
+    //   from: 'Bharat Innovations <noreply@bharatinnovations.com>',
+    //   to: ['hello@bharatinnovations.com'],
     //   subject: `New contact from ${body.from_name} - ${body.company_name}`,
     //   html: formatEmailHtml(body),
     // });

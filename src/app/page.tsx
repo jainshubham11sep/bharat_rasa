@@ -8,6 +8,7 @@ import DashboardSection from "@/components/sections/DashboardSection";
 import HowWeGrowSection from "@/components/sections/HowWeGrowSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import ClientReelsSection from "@/components/sections/ClientReelsSection";
 import AboutCardSection from "@/components/sections/AboutCardSection";
 import CareersSection from "@/components/sections/CareersSection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -25,6 +26,7 @@ export default function HomePage() {
       <HowWeGrowSection />
       <StatsSection />
       <TestimonialsSection />
+      <ClientReelsSection />
       <AboutCardSection />
       <CareersSection />
       <FAQSection />

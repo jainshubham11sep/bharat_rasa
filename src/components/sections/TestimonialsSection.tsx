@@ -44,9 +44,34 @@ function useThumbnails() {
 export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [sectionVisible, setSectionVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const thumbs = useThumbnails();
   const item = testimonials[current];
+
+  // Autoplay when section scrolls into view
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setSectionVisible(entry.isIntersecting);
+        const v = videoRef.current;
+        if (!v) return;
+        if (entry.isIntersecting) {
+          v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+        } else {
+          v.pause();
+          setPlaying(false);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const v = videoRef.current;
@@ -54,15 +79,24 @@ export default function TestimonialsSection() {
     v.pause();
     v.src = testimonials[current].videoUrl;
     v.loop = false;
+    v.muted = muted;
     v.load();
-    v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    if (sectionVisible) {
+      v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    }
 
     const onEnded = () => {
       setCurrent(c => (c + 1) % testimonials.length);
     };
     v.addEventListener("ended", onEnded);
     return () => v.removeEventListener("ended", onEnded);
-  }, [current]);
+  }, [current, muted]);
+
+  // Sync muted state to video element
+  useEffect(() => {
+    const v = videoRef.current;
+    if (v) v.muted = muted;
+  }, [muted]);
 
   const handlePlayPause = () => {
     const v = videoRef.current;
@@ -71,7 +105,16 @@ export default function TestimonialsSection() {
     else { v.pause(); setPlaying(false); }
   };
 
-  const selectVideo = (i: number) => { setPlaying(false); setCurrent(i); };
+  const handleMuteToggle = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setMuted(m => !m);
+  };
+
+  const selectVideo = (i: number) => {
+    setPlaying(false);
+    setMuted(false);
+    setCurrent(i);
+  };
 
   const PlaylistItem = ({ i }: { i: number }) => {
     const t = testimonials[i];
@@ -110,7 +153,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="yt2-section">
+    <section className="yt2-section" ref={sectionRef}>
       <div className="yt2-inner">
 
         {/* Header */}
@@ -130,6 +173,7 @@ export default function TestimonialsSection() {
                 src={item.videoUrl}
                 preload="auto"
                 playsInline
+                muted
                 onClick={handlePlayPause}
                 className="yt2-video"
               />
@@ -143,6 +187,23 @@ export default function TestimonialsSection() {
                   </div>
                 </button>
               )}
+
+              {/* Speaker / Mute toggle */}
+              <button onClick={handleMuteToggle} aria-label={muted ? "Unmute" : "Mute"} className="yt2-mute-btn">
+                {muted ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                    <line x1="23" y1="9" x2="17" y2="15" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <line x1="17" y1="9" x2="23" y2="15" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                    <path d="M19.07 4.93a10 10 0 010 14.14" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                    <path d="M15.54 8.46a5 5 0 010 7.07" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                  </svg>
+                )}
+              </button>
 
               <div className="yt2-caption">
                 <span className="yt2-caption-text">{item.quote}</span>
@@ -176,7 +237,7 @@ export default function TestimonialsSection() {
       <style>{`
         .yt2-section {
           width: 100%;
-          padding: 4rem 1.25rem;
+          padding: 2.5rem 1.25rem;
           background: linear-gradient(180deg, #000 0%, #0a0a14 100%);
           color: #fff;
           font-family: Inter, system-ui, sans-serif;
@@ -219,6 +280,16 @@ export default function TestimonialsSection() {
           background: rgba(255,255,255,0.18); backdrop-filter: blur(6px);
           display: flex; align-items: center; justify-content: center;
         }
+        .yt2-mute-btn {
+          position: absolute; bottom: 2.8rem; right: 0.75rem;
+          width: 36px; height: 36px; border-radius: 50%;
+          background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2);
+          display: flex; align-items: center; justify-content: center;
+          cursor: pointer; z-index: 10; backdrop-filter: blur(4px);
+          transition: background 0.15s;
+        }
+        .yt2-mute-btn:hover { background: rgba(0,0,0,0.85); }
+
         .yt2-caption {
           position: absolute; bottom: 0; left: 0; right: 0;
           padding: 0.55rem 0.9rem; background: rgba(0,0,0,0.78);
