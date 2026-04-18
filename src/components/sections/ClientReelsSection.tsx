@@ -8,7 +8,8 @@ const reels = [
     caption: "Working with Bharat Innovations transformed our entire marketing approach — our sales doubled in 3 months!",
   },
   {
-    src: "/media/IMG_1606.MP4",
+    // IMG_1606.MP4 is 172MB — too large for git. Using committed testimonial video instead.
+    src: "/media/IMG_4070.MP4",
     caption: "The team at Bharat Innovations really understands e-commerce. Our ROAS went from 1.8x to 4.5x in just 60 days.",
   },
   {
@@ -23,6 +24,15 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
 
+  // Fix: React's `muted` JSX prop doesn't set the DOM property on mobile browsers.
+  // Must imperatively set el.muted on mount before any play() call.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    (v as HTMLVideoElement & { defaultMuted: boolean }).defaultMuted = true;
+  }, []);
+
   useEffect(() => {
     const card = cardRef.current;
     if (!card) return;
@@ -31,13 +41,14 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
         const v = videoRef.current;
         if (!v) return;
         if (entry.isIntersecting) {
-          v.play().then(() => setPlaying(true)).catch(() => {});
+          v.muted = true; // enforce before play — required by mobile browsers
+          v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
         } else {
           v.pause();
           setPlaying(false);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
     observer.observe(card);
     return () => observer.disconnect();
@@ -51,8 +62,13 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
-    if (v.paused) { v.play().then(() => setPlaying(true)).catch(() => {}); }
-    else { v.pause(); setPlaying(false); }
+    if (v.paused) {
+      v.muted = muted;
+      v.play().then(() => setPlaying(true)).catch(() => {});
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
   };
 
   return (
@@ -60,10 +76,9 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
       <video
         ref={videoRef}
         src={src}
-        muted
         playsInline
         loop
-        preload="metadata"
+        preload="auto"
         onClick={togglePlay}
         className="cr-video"
       />
@@ -76,9 +91,11 @@ function ReelCard({ src, caption }: { src: string; caption: string }) {
       {/* Play/pause overlay */}
       {!playing && (
         <button onClick={togglePlay} className="cr-play-btn" aria-label="Play">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-            <polygon points="5 3 19 12 5 21 5 3" />
-          </svg>
+          <div className="cr-play-circle">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+          </div>
         </button>
       )}
 
@@ -113,7 +130,7 @@ export default function ClientReelsSection() {
         <div className="cr-header">
           <span className="cr-eyebrow">Testimonials</span>
           <h2 className="cr-title">What Clients Say About Us</h2>
-          <p className="cr-sub">Real words from real brands we've helped grow.</p>
+          <p className="cr-sub">Real words from real brands we&apos;ve helped grow.</p>
         </div>
         <div className="cr-grid">
           {reels.map((r, i) => (
@@ -183,11 +200,15 @@ export default function ClientReelsSection() {
           display: flex; align-items: center; justify-content: center;
           background: rgba(0,0,0,0.3); border: none; cursor: pointer;
         }
-        .cr-play-btn svg { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6)); }
+        .cr-play-circle {
+          width: 56px; height: 56px; border-radius: 50%;
+          background: rgba(255,255,255,0.18); backdrop-filter: blur(6px);
+          display: flex; align-items: center; justify-content: center;
+        }
 
         .cr-mute-btn {
           position: absolute; top: 0.75rem; right: 0.75rem;
-          width: 32px; height: 32px; border-radius: 50%;
+          width: 34px; height: 34px; border-radius: 50%;
           background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2);
           display: flex; align-items: center; justify-content: center;
           cursor: pointer; z-index: 10; backdrop-filter: blur(4px);
