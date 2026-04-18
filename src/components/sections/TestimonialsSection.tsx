@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { testimonials } from "@/data/testimonials";
 
@@ -46,8 +46,19 @@ export default function TestimonialsSection() {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
   const [sectionVisible, setSectionVisible] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+
+  // React's `muted` JSX prop doesn't set the DOM property on mobile — use ref callback
+  const assignVideoRef = useCallback((el: HTMLVideoElement | null) => {
+    videoRef.current = el;
+    if (!el) return;
+    el.muted = true;
+    el.defaultMuted = true;
+    el.setAttribute("muted", "");
+    el.setAttribute("playsinline", "");
+    el.setAttribute("webkit-playsinline", "");
+  }, []);
   const thumbs = useThumbnails();
   const item = testimonials[current];
 
@@ -61,6 +72,7 @@ export default function TestimonialsSection() {
         const v = videoRef.current;
         if (!v) return;
         if (entry.isIntersecting) {
+          v.muted = true;
           v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
         } else {
           v.pause();
@@ -169,11 +181,10 @@ export default function TestimonialsSection() {
           <div className="yt2-player-col">
             <div className="yt2-player-wrap">
               <video
-                ref={videoRef}
+                ref={assignVideoRef}
                 src={item.videoUrl}
                 preload="auto"
                 playsInline
-                muted
                 onClick={handlePlayPause}
                 className="yt2-video"
               />
