@@ -19,7 +19,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bharatinnovations.com"),
+  metadataBase: new URL("https://bharatinnovations.co"),
   title: {
     default: "Bharat Innovations — AI-Powered Performance Marketing Agency for D2C & eCommerce Brands",
     template: "%s | Bharat Innovations",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Bharat Innovations — AI-Powered Performance Marketing for D2C & eCommerce",
     description:
       "Struggling with poor ROAS and inconsistent sales? Bharat Innovations' RASA Framework delivers 6x–8x ROAS and 50%+ order growth for D2C and eCommerce brands across India. Paid Ads, SEO, Web Dev, AI Automation — all under one roof.",
-    url: "https://bharatinnovations.com/",
+    url: "https://bharatinnovations.co/",
     siteName: "Bharat Innovations",
     images: [
       {
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     creator: "@bharatinnovations",
   },
   alternates: {
-    canonical: "https://bharatinnovations.com",
+    canonical: "https://bharatinnovations.co",
   },
   robots: {
     index: true,
