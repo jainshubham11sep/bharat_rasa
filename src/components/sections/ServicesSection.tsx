@@ -17,7 +17,7 @@ const CheckIcon = () => (
 );
 
 export default function ServicesSection() {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
 
   return (
     <>
@@ -45,9 +45,9 @@ export default function ServicesSection() {
 
                   <button
                     className="gg-sv-btn"
-                    onClick={() => setModalOpen(true)}
+                    onClick={() => setSelectedService(service.title)}
                   >
-                    Book a Free Strategy Call
+                    Get a Quote
                   </button>
                 </div>
               </div>
@@ -56,7 +56,11 @@ export default function ServicesSection() {
         </div>
       </section>
 
-      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <ContactModal
+        isOpen={selectedService !== null}
+        onClose={() => setSelectedService(null)}
+        service={selectedService ?? ""}
+      />
     </>
   );
 }

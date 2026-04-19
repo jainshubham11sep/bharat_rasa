@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import ContactForm from "./ContactForm";
+import QuoteForm from "./QuoteForm";
 
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
+  service?: string;
 }
 
-export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+export default function ContactModal({ isOpen, onClose, service }: ContactModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,25 +30,19 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   return (
     <div
       className="gg-mask"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
       role="dialog"
       aria-modal="true"
-      aria-label="Contact form"
+      aria-label="Get a quote"
     >
       <div className="gg-modal" ref={modalRef}>
-        <button
-          className="gg-close"
-          aria-label="Close modal"
-          onClick={onClose}
-        >
+        <button className="gg-close" aria-label="Close modal" onClick={onClose}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" />
           </svg>
         </button>
         <div className="gg-modal-inner">
-          <ContactForm />
+          <QuoteForm service={service} />
         </div>
       </div>
     </div>
