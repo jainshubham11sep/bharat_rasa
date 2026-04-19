@@ -1,5 +1,17 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "The RASA Framework | Bharat Innovations' AI Growth System",
+  description: "RASA: Research, Ad Creative Strategy, Scale & Automation — Bharat Innovations' proprietary 4-pillar marketing system delivering 6x–8x ROAS for D2C & eCommerce brands across India.",
+  keywords: ["RASA Framework", "AI marketing framework", "D2C growth system", "performance marketing methodology", "Bharat Innovations RASA"],
+  openGraph: {
+    title: "The RASA Framework | Bharat Innovations' AI Growth System",
+    description: "The 4-pillar AI marketing system behind every profitable D2C brand we scale. Research → Ad Creative → Scale → Automation.",
+    url: "https://bharatinnovations.co/rasa-framework",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
+};
+
 const pillars = [
   {
     letter: "R",

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Refund & Returns Policy — Bharat Innovations",
-  description: "Refund and Returns Policy for Bharat Innovations — India's First AI Marketing Agency.",
+  title: "Refund & Returns Policy | Bharat Innovations",
+  description: "Read Bharat Innovations' Refund & Returns Policy. Understand our service terms, cancellation process, and refund conditions.",
 };
 
 export default function RefundReturnsPage() {

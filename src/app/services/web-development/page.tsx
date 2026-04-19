@@ -1,8 +1,15 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Web Development — Bharat Innovations",
-  description: "High-converting D2C storefronts and landing pages built for speed, mobile performance, and conversions.",
+  title: "Web Development for D2C & eCommerce | Bharat Innovations",
+  description: "High-converting Shopify & custom D2C storefronts. Under 2s mobile load, 95+ PageSpeed score, +28% avg CVR lift. Mobile-first, SEO-ready, conversion-optimised builds.",
+  keywords: ["D2C web development India", "Shopify development agency", "eCommerce website development", "conversion rate optimisation", "Next.js development India", "D2C storefront design"],
+  openGraph: {
+    title: "Web Development for D2C & eCommerce | Bharat Innovations",
+    description: "<2s load time. 95+ PageSpeed. +28% CVR lift. We build D2C storefronts that convert visitors into buyers.",
+    url: "https://bharatinnovations.co/services/web-development",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
 };
 
 const results = [

@@ -2,8 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About Us — Bharat Innovations",
-  description: "India's First AI Marketing Agency. We help D2C brands scale profitably using the RASA Framework.",
+  title: "About Bharat Innovations | AI Marketing Agency India",
+  description: "Meet the team behind India's leading AI marketing agency. We help D2C & eCommerce brands scale profitably with our RASA Framework — data, creatives, automation, results.",
+  keywords: ["about Bharat Innovations", "AI marketing agency India", "D2C growth agency", "RASA Framework", "performance marketing India"],
+  openGraph: {
+    title: "About Bharat Innovations | AI Marketing Agency India",
+    description: "We're India's AI-first performance marketing agency built for D2C brands. Real data. Winning creatives. Profitable scale.",
+    url: "https://bharatinnovations.co/about",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
 };
 
 const values = [

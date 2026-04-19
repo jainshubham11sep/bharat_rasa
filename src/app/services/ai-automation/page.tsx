@@ -1,8 +1,15 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "AI Automation & Retargeting — Bharat Innovations",
-  description: "AI-powered retargeting flows and chatbot sequences that recover lost sales and convert warm audiences 24/7.",
+  title: "AI Automation & Retargeting for D2C | Bharat Innovations",
+  description: "Recover 40% of abandoned carts with AI-powered retargeting flows, WhatsApp chatbots & Meta dynamic ads — running 24/7 with zero extra ad spend for your D2C brand.",
+  keywords: ["AI marketing automation India", "retargeting agency", "WhatsApp chatbot marketing", "cart abandonment recovery", "Meta retargeting D2C", "email drip campaigns India"],
+  openGraph: {
+    title: "AI Automation & Retargeting for D2C | Bharat Innovations",
+    description: "40% cart recovery. 2–3x warm audience ROAS. Zero extra ad spend. AI automation that works while you sleep.",
+    url: "https://bharatinnovations.co/services/ai-automation",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
 };
 
 const results = [

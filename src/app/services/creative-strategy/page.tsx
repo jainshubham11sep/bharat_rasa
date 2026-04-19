@@ -1,8 +1,15 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Creative Strategy & Testing — Bharat Innovations",
-  description: "30+ creatives tested every month. We find winning hooks fast and scale them hard.",
+  title: "Creative Strategy & Ad Testing | Bharat Innovations",
+  description: "30+ creatives tested every month for your D2C brand. We identify winning hooks in 7 days and scale hard — resulting in 3x higher CVR vs unoptimised creatives.",
+  keywords: ["ad creative strategy India", "creative testing agency", "UGC ads D2C", "winning ad creatives", "video ad production India", "scroll-stopping creatives"],
+  openGraph: {
+    title: "Creative Strategy & Ad Testing | Bharat Innovations",
+    description: "30+ creatives per month. Winners found in 7 days. 3x better CVR. No ad fatigue. Built for D2C brands that want to scale fast.",
+    url: "https://bharatinnovations.co/services/creative-strategy",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
 };
 
 const results = [

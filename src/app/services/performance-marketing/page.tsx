@@ -1,8 +1,15 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Performance Marketing — Bharat Innovations",
-  description: "ROI-first Meta & Google ad campaigns for D2C brands. We scale your ad spend while protecting ROAS.",
+  title: "Performance Marketing Agency India | Bharat Innovations",
+  description: "ROI-first Meta & Google ad campaigns for D2C brands. Scale from ₹10K to ₹30K/day while maintaining 8.5x ROAS. 400%+ order growth. Full-funnel ad management.",
+  keywords: ["performance marketing agency India", "Meta ads agency India", "Google ads for D2C", "ROAS optimization", "paid advertising D2C brands", "Facebook ads agency India"],
+  openGraph: {
+    title: "Performance Marketing Agency India | Bharat Innovations",
+    description: "Scale your D2C brand's ad spend profitably. We've achieved 8.5x ROAS, 10x ROAS on eCommerce, and 400%+ order volume growth for our clients.",
+    url: "https://bharatinnovations.co/services/performance-marketing",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
 };
 
 const results = [

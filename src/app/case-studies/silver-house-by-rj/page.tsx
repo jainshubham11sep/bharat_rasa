@@ -1,6 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Silver House by RJ Case Study — 5x ROAS | Bharat Innovations",
+  description: "How Bharat Innovations scaled Silver House by RJ from 2.3x to 5x consistent ROAS with influencer seeding, high-converting creatives & full-funnel Meta ad strategy.",
+  keywords: ["silver jewellery brand marketing", "silver house by RJ case study", "5x ROAS jewellery", "jewellery brand Meta ads", "Bharat Innovations jewellery"],
+  openGraph: {
+    title: "Silver House by RJ — 5x ROAS Case Study | Bharat Innovations",
+    description: "From 2.3x to 5x consistent ROAS. Influencer seeding + winning creatives + full-funnel strategy — here's how we did it.",
+    url: "https://bharatinnovations.co/case-studies/silver-house-by-rj",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
+};
+
 const phases = [
   {
     phase: "Phase 1 · Months 1–3",

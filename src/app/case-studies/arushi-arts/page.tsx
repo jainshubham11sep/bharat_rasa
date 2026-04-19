@@ -1,5 +1,17 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Arushi Arts Jewellery Case Study — 7.5x ROAS | Bharat Innovations",
+  description: "How Bharat Innovations repositioned Arushi Arts as a premium imitation jewellery brand, achieving 7.5x ROAS & 300%+ order growth with influencer seeding & Meta ads.",
+  keywords: ["Arushi Arts case study", "imitation jewellery marketing", "jewellery brand positioning India", "7.5x ROAS case study", "D2C jewellery marketing"],
+  openGraph: {
+    title: "Arushi Arts — 7.5x ROAS Jewellery Case Study | Bharat Innovations",
+    description: "Premium repositioning + micro-influencers + Meta ads = 7.5x ROAS and 300% more orders. The Arushi Arts growth story.",
+    url: "https://bharatinnovations.co/case-studies/arushi-arts",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
+};
+
 const stats = [
   { value: "7.5x", label: "Average ROAS" },
   { value: "+300%", label: "Increase in orders" },

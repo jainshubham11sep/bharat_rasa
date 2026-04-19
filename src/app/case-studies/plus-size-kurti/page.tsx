@@ -1,5 +1,17 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Plus-Size Kurti Brand Case Study | 6x ROAS | Bharat Innovations",
+  description: "How Bharat Innovations helped a plus-size fashion brand achieve 6x ROAS and consistent daily orders through influencer strategy, premium content & paid advertising on Meta.",
+  keywords: ["plus size fashion marketing", "D2C fashion case study", "Meta ads fashion brand", "influencer marketing fashion", "Bharat Innovations case study"],
+  openGraph: {
+    title: "Plus-Size Kurti Brand — 6x ROAS Case Study | Bharat Innovations",
+    description: "From zero to consistent daily orders. See how we scaled a plus-size kurti brand with influencer seeding, model-led content & Meta ads.",
+    url: "https://bharatinnovations.co/case-studies/plus-size-kurti",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
+};
+
 const months = [
   {
     month: "Month 1",

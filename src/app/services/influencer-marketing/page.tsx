@@ -1,8 +1,15 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Influencer Marketing — Bharat Innovations",
-  description: "Trust-building influencer campaigns that reduce purchase hesitation and boost conversion rates for D2C brands.",
+  title: "Influencer Marketing for D2C Brands | Bharat Innovations",
+  description: "Trust-building influencer campaigns for jewellery, fashion & lifestyle D2C brands. Boost CVR by 35%, build brand credibility in 30 days & repurpose content for paid ads.",
+  keywords: ["influencer marketing India", "D2C influencer agency", "micro influencer marketing", "UGC content India", "jewellery influencer marketing", "fashion influencer agency India"],
+  openGraph: {
+    title: "Influencer Marketing for D2C Brands | Bharat Innovations",
+    description: "+35% CVR lift. 30-day credibility build. Content repurposed for paid ads. Influencer marketing built for D2C brands that want real ROI.",
+    url: "https://bharatinnovations.co/services/influencer-marketing",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
 };
 
 const results = [

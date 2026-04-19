@@ -1,6 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = {
+  title: "CashMagnet Case Study — 10x ROAS | Bharat Innovations",
+  description: "How Bharat Innovations helped CashMagnet achieve 10x ROAS with a full-funnel audit, 30+ monthly creatives & data-driven Meta campaigns. From leaky funnel to profitable scale.",
+  keywords: ["CashMagnet case study", "10x ROAS case study", "full funnel marketing India", "D2C eCommerce case study", "Meta ads 10x ROAS India"],
+  openGraph: {
+    title: "CashMagnet — 10x ROAS Case Study | Bharat Innovations",
+    description: "Full-funnel audit + 30+ monthly creatives + data-driven campaigns = 10x ROAS. Here's the exact playbook.",
+    url: "https://bharatinnovations.co/case-studies/cashmagnet",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
+};
+
 const stats = [
   { value: "10x",   label: "Return on ad spend" },
   { value: "400%",  label: "Increase in orders" },

@@ -1,8 +1,15 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Services — Bharat Innovations",
-  description: "AI-powered marketing services for D2C brands — Performance Marketing, Creative Strategy, AI Automation, SEO, Web Development & Influencer Marketing.",
+  title: "Marketing Services for D2C Brands | Bharat Innovations",
+  description: "End-to-end AI marketing services — Paid Ads (Meta & Google), Creative Strategy, SEO, Web Development, AI Automation & Influencer Marketing for D2C & eCommerce brands in India.",
+  keywords: ["D2C marketing services India", "paid advertising agency", "creative strategy", "SEO for eCommerce", "web development D2C", "AI automation marketing", "influencer marketing India"],
+  openGraph: {
+    title: "Marketing Services for D2C Brands | Bharat Innovations",
+    description: "Full-stack AI marketing services for D2C brands — everything from paid ads to SEO to web development, all powered by the RASA Framework.",
+    url: "https://bharatinnovations.co/services",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
 };
 
 const services = [

@@ -1,5 +1,17 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Jewelry House Case Study — 8.5x ROAS | Bharat Innovations",
+  description: "How Bharat Innovations helped Jewelry House achieve 8.5x consistent ROAS with laser-targeted audience strategy, 30+ monthly creatives & profitable Meta ad scaling.",
+  keywords: ["Jewelry House case study", "jadau kundan jewellery marketing", "8.5x ROAS case study", "jewellery eCommerce marketing India", "Meta ads jewellery brand"],
+  openGraph: {
+    title: "Jewelry House — 8.5x ROAS Case Study | Bharat Innovations",
+    description: "Precise audience targeting + relentless creative testing = 8.5x consistent ROAS and 250%+ order growth for Jewelry House.",
+    url: "https://bharatinnovations.co/case-studies/jewelry-house",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
+};
+
 const stats = [
   { value: "8.5x",  label: "Consistent ROAS" },
   { value: "+250%", label: "Increase in orders" },

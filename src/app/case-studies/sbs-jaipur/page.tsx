@@ -1,6 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = {
+  title: "SBS Jaipur Case Study — 20x ROAS | Bharat Innovations",
+  description: "How Bharat Innovations helped SBS Jaipur achieve 20x ROAS with creative testing, founder personal branding & 32,000 new Instagram followers in 3 months.",
+  keywords: ["SBS Jaipur case study", "jewellery brand marketing India", "20x ROAS case study", "founder personal branding", "Instagram growth jewellery brand"],
+  openGraph: {
+    title: "SBS Jaipur — 20x ROAS Case Study | Bharat Innovations",
+    description: "32,000 new followers. 20x ROAS. Founder turned into a brand face. See how we transformed SBS Jaipur's marketing from the ground up.",
+    url: "https://bharatinnovations.co/case-studies/sbs-jaipur",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
+};
+
 const before = [
   { label: "Monthly ad spend", value: "₹2,00,000" },
   { label: "Monthly revenue", value: "₹6–7 Lakhs" },

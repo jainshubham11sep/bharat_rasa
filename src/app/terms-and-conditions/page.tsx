@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Terms & Conditions — Bharat Innovations",
-  description: "Terms and Conditions for Bharat Innovations — India's First AI Marketing Agency.",
+  title: "Terms & Conditions | Bharat Innovations",
+  description: "Read Bharat Innovations' Terms & Conditions governing the use of our AI marketing services and website.",
 };
 
 export default function TermsPage() {

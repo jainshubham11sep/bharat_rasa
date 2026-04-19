@@ -1,8 +1,15 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "SEO & Content — Bharat Innovations",
-  description: "Technical SEO, keyword strategy and content that drives consistent organic traffic to your D2C store.",
+  title: "SEO Agency for D2C & eCommerce India | Bharat Innovations",
+  description: "Technical SEO, keyword strategy & content marketing for D2C brands. Achieve top-3 rankings, 60%+ organic traffic growth — traffic that keeps coming even after ads stop.",
+  keywords: ["SEO agency India", "eCommerce SEO", "D2C SEO agency", "technical SEO India", "Shopify SEO", "organic traffic growth", "content marketing India", "keyword ranking India"],
+  openGraph: {
+    title: "SEO Agency for D2C & eCommerce India | Bharat Innovations",
+    description: "Top-3 keyword rankings. 60%+ organic traffic growth. White-hat SEO that keeps working long after your ads stop.",
+    url: "https://bharatinnovations.co/services/seo",
+    images: [{ url: "/images/MARKETING-agency-2.png", width: 1200, height: 630 }],
+  },
 };
 
 const results = [

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy — Bharat Innovations",
-  description: "Privacy Policy for Bharat Innovations — India's First AI Marketing Agency.",
+  title: "Privacy Policy | Bharat Innovations",
+  description: "Read Bharat Innovations' Privacy Policy to understand how we collect, use, and protect your personal data. Your privacy matters to us.",
 };
 
 export default function PrivacyPolicyPage() {
