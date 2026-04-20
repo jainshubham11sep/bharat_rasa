@@ -3492,3 +3492,179 @@ img { max-width: 100%; height: auto; }
   .svc-body { padding: 2.5rem 1rem 3rem; }
   .svc-detail-body { padding: 2rem 1rem 3rem; }
 }
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   ============================================================ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.08);
+}
+html[data-theme="light"] .theme-toggle {
+  background: rgba(0,0,0,0.07);
+  border-color: rgba(0,0,0,0.15);
+  color: #1a1a1a;
+}
+html[data-theme="light"] .theme-toggle:hover {
+  background: rgba(0,0,0,0.12);
+}
+
+/* ============================================================
+   LIGHT MODE OVERRIDES
+   ============================================================ */
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background: #f4f0eb;
+  color: #1a1a1a;
+}
+
+/* Nav */
+html[data-theme="light"] .ggnav {
+  background: rgba(244,240,235,0.96);
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+html[data-theme="light"] .menu-toggle {
+  color: #1a1a1a;
+}
+html[data-theme="light"] .menu-toggle:hover {
+  background: rgba(0,0,0,0.06);
+}
+html[data-theme="light"] .btn-diy {
+  background: #1a1a1a;
+  color: #fff;
+}
+html[data-theme="light"] .btn-diy:hover {
+  background: var(--gg-accent);
+  color: #fff;
+}
+
+/* Drawer */
+html[data-theme="light"] .ggnav-drawer {
+  background: rgba(244,240,235,0.98);
+  border-right-color: rgba(0,0,0,0.1);
+  box-shadow: 8px 0 32px rgba(0,0,0,0.12);
+}
+html[data-theme="light"] .drawer-header {
+  border-bottom-color: rgba(0,0,0,0.08);
+}
+html[data-theme="light"] .drawer-close {
+  background: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.15);
+  color: #1a1a1a;
+}
+html[data-theme="light"] .drawer-close:hover {
+  background: rgba(0,0,0,0.12);
+}
+html[data-theme="light"] .ggnav-menu li {
+  border-bottom-color: rgba(0,0,0,0.06);
+}
+html[data-theme="light"] .ggnav-menu li a {
+  color: #1a1a1a;
+}
+html[data-theme="light"] .ggnav-menu li a:hover {
+  background: rgba(0,0,0,0.04);
+}
+html[data-theme="light"] .drawer-footer {
+  border-top-color: rgba(0,0,0,0.08);
+}
+
+/* Hero */
+html[data-theme="light"] .gg-hero {
+  background:
+    radial-gradient(circle at 20% 35%, rgba(180,140,220,0.2), transparent 40%),
+    radial-gradient(circle at 75% 20%, rgba(200,140,180,0.18), transparent 35%),
+    linear-gradient(135deg, #f4f0eb 0%, #ede5f5 35%, #f0e8f0 70%, #f4f0eb 100%);
+  color: #1a1a1a;
+}
+html[data-theme="light"] .gg-hero .gg-h1,
+html[data-theme="light"] .gg-hero h1 { color: #0f0f1e; }
+html[data-theme="light"] .gg-hero p { color: rgba(15,15,30,0.65); }
+
+/* Footer */
+html[data-theme="light"] .ggfooter {
+  background: #e8e2db !important;
+  color: #1a1a1a;
+}
+html[data-theme="light"] .ggfooter .copyright {
+  background: rgba(0,0,0,0.06) !important;
+  border-top-color: rgba(0,0,0,0.1) !important;
+  color: rgba(0,0,0,0.5) !important;
+}
+html[data-theme="light"] .ggfooter-tagline { color: rgba(0,0,0,0.5) !important; }
+html[data-theme="light"] .ggfooter-phone { color: rgba(0,0,0,0.7) !important; }
+html[data-theme="light"] .ggfooter-phone:hover { color: #c8745e !important; }
+html[data-theme="light"] .ggfooter-address { color: rgba(0,0,0,0.45) !important; }
+html[data-theme="light"] .footer-links a { color: rgba(0,0,0,0.65) !important; }
+html[data-theme="light"] .footer-links a:hover { color: #c8745e !important; }
+html[data-theme="light"] .ggfooter-social-name { color: rgba(0,0,0,0.8) !important; }
+html[data-theme="light"] .ggfooter-social-sub { color: rgba(0,0,0,0.4) !important; }
+html[data-theme="light"] .ggfooter-social-icon {
+  background: rgba(200,116,94,0.12) !important;
+  border-color: rgba(200,116,94,0.2) !important;
+}
+html[data-theme="light"] .marquee-wrap { background: #e0d8d0 !important; }
+
+/* Generic section backgrounds */
+html[data-theme="light"] .gg-sv-wrap { background: #f4f0eb !important; }
+html[data-theme="light"] .gg-sv-card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+html[data-theme="light"] .gg-sv-card h3 { color: #0f0f1e !important; }
+html[data-theme="light"] .gg-sv-card p,
+html[data-theme="light"] .gg-sv-desc { color: rgba(0,0,0,0.55) !important; }
+html[data-theme="light"] .gg-sv-text { color: rgba(0,0,0,0.7) !important; }
+html[data-theme="light"] .gg-sv-icon { color: var(--gg-accent) !important; }
+
+/* Client reels */
+html[data-theme="light"] .cr-section {
+  background: linear-gradient(180deg, #ede5f5 0%, #f4f0eb 100%) !important;
+}
+html[data-theme="light"] .cr-title { color: #0f0f1e !important; }
+html[data-theme="light"] .cr-sub { color: rgba(0,0,0,0.5) !important; }
+
+/* Contact form */
+html[data-theme="light"] .ggcontact { background: #f4f0eb !important; }
+html[data-theme="light"] .ggc-card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+html[data-theme="light"] .ggc-title,
+html[data-theme="light"] .ggc-form label { color: #0f0f1e !important; }
+html[data-theme="light"] .ggc-form input,
+html[data-theme="light"] .ggc-form select,
+html[data-theme="light"] .ggc-form textarea {
+  background: rgba(0,0,0,0.04) !important;
+  border-color: rgba(0,0,0,0.15) !important;
+  color: #1a1a1a !important;
+}
+
+/* About / legal pages */
+html[data-theme="light"] .about-page,
+html[data-theme="light"] .about-hero { background: #f4f0eb !important; color: #1a1a1a !important; }
+html[data-theme="light"] .about-body,
+html[data-theme="light"] .legal-content { color: #1a1a1a !important; }
+html[data-theme="light"] .legal-section h2 { color: #0f0f1e !important; }
+html[data-theme="light"] .legal-section p,
+html[data-theme="light"] .legal-section li { color: rgba(0,0,0,0.7) !important; }
+
+/* General headings/text fallback */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4 { color: #0f0f1e; }
+html[data-theme="light"] p { color: rgba(15,15,30,0.65); }
