@@ -33,7 +33,7 @@ export default function ContactModal({ isOpen, onClose, service }: ContactModalP
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
       role="dialog"
       aria-modal="true"
-      aria-label="Get a quote"
+      aria-label="Schedule a Call"
     >
       <div className="gg-modal" ref={modalRef}>
         <button className="gg-close" aria-label="Close modal" onClick={onClose}>

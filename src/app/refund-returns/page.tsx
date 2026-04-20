@@ -49,7 +49,7 @@ export default function RefundReturnsPage() {
               <li>A technical or billing error resulted in a duplicate charge</li>
               <li>A written agreement between both parties specifically includes refund provisions</li>
             </ul>
-            <p>Refund requests must be submitted in writing to hello@bharatinnovations.in within 7 days of the charge. Requests made after this window will not be considered.</p>
+            <p>Refund requests must be submitted in writing to info@bharatinnovations.co within 7 days of the charge. Requests made after this window will not be considered.</p>
           </section>
 
           <section className="legal-section">
@@ -75,7 +75,7 @@ export default function RefundReturnsPage() {
           <section className="legal-section">
             <h2>7. Contact Us</h2>
             <p>For refund-related queries, please reach out to us at:</p>
-            <p><strong>Bharat Innovations</strong><br />Email: hello@bharatinnovations.in</p>
+            <p><strong>Bharat Innovations</strong><br />Email: info@bharatinnovations.co</p>
             <p>We aim to respond to all queries within 2 business days.</p>
           </section>
 

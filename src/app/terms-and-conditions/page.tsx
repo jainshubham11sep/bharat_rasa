@@ -84,7 +84,7 @@ export default function TermsPage() {
           <section className="legal-section">
             <h2>11. Contact</h2>
             <p>For questions about these Terms, contact us at:</p>
-            <p><strong>Bharat Innovations</strong><br />Email: hello@bharatinnovations.in</p>
+            <p><strong>Bharat Innovations</strong><br />Email: info@bharatinnovations.co</p>
           </section>
 
         </div>

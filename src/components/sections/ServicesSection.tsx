@@ -47,7 +47,7 @@ export default function ServicesSection() {
                     className="gg-sv-btn"
                     onClick={() => setSelectedService(service.title)}
                   >
-                    Get a Quote
+                    Schedule a Call
                   </button>
                 </div>
               </div>

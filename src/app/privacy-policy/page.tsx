@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="legal-section">
             <h2>7. Your Rights</h2>
-            <p>You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at hello@bharatinnovations.in.</p>
+            <p>You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at info@bharatinnovations.co.</p>
           </section>
 
           <section className="legal-section">
@@ -75,7 +75,7 @@ export default function PrivacyPolicyPage() {
           <section className="legal-section">
             <h2>9. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact us at:</p>
-            <p><strong>Bharat Innovations</strong><br />Email: hello@bharatinnovations.in</p>
+            <p><strong>Bharat Innovations</strong><br />Email: info@bharatinnovations.co</p>
           </section>
 
         </div>
