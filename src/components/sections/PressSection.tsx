@@ -129,7 +129,7 @@ export default function PressSection() {
   const onMouseUp = () => setDragStart(null);
 
   return (
-    <section style={{
+    <section className="press-section" style={{
       width: "100%",
       background: "#05050d",
       color: "#fff",

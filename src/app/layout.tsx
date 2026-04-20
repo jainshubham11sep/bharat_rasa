@@ -102,6 +102,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        {/* Set theme before paint to prevent flash */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');})();` }} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NF7KKVL0WX"
           strategy="afterInteractive"
