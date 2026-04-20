@@ -3676,21 +3676,39 @@ html[data-theme="light"] .yt2-section {
   background: linear-gradient(180deg, #f0eaf8 0%, #f7f4f0 100%) !important;
   color: #1a1a1a !important;
 }
-html[data-theme="light"] .yt2-title,
-html[data-theme="light"] .yt2-header h2 { color: #0f0f1e !important; }
+html[data-theme="light"] .yt2-eyebrow { color: #c8745e !important; }
+html[data-theme="light"] .yt2-title { color: #0f0f1e !important; }
+html[data-theme="light"] .yt2-player-wrap { background: #e8e2db !important; }
+html[data-theme="light"] .yt2-play-btn { background: rgba(0,0,0,0.15) !important; }
+html[data-theme="light"] .yt2-play-circle { background: rgba(255,255,255,0.8) !important; }
+html[data-theme="light"] .yt2-play-circle svg { fill: #1a1a1a !important; }
+html[data-theme="light"] .yt2-mute-btn { background: rgba(255,255,255,0.75) !important; border-color: rgba(0,0,0,0.15) !important; }
+html[data-theme="light"] .yt2-mute-btn svg { stroke: #1a1a1a !important; fill: #1a1a1a !important; }
+html[data-theme="light"] .yt2-caption { background: rgba(255,255,255,0.85) !important; }
+html[data-theme="light"] .yt2-caption-text { color: #1a1a1a !important; }
+html[data-theme="light"] .yt2-meta-name { color: #0f0f1e !important; }
+html[data-theme="light"] .yt2-meta-role { color: rgba(0,0,0,0.5) !important; }
+html[data-theme="light"] .yt2-chip { border-color: rgba(200,116,94,0.4) !important; color: #c8745e !important; background: rgba(200,116,94,0.08) !important; }
+html[data-theme="light"] .yt2-playlist-col {
+  background: #fff !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+html[data-theme="light"] .yt2-playlist-header { border-bottom-color: rgba(0,0,0,0.08) !important; }
+html[data-theme="light"] .yt2-playlist-label { color: #0f0f1e !important; }
+html[data-theme="light"] .yt2-playlist-count { color: rgba(0,0,0,0.4) !important; }
+html[data-theme="light"] .yt2-playlist-scroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15) !important; }
 html[data-theme="light"] .yt2-item {
-  background: rgba(0,0,0,0.04) !important;
-  border-color: rgba(0,0,0,0.1) !important;
+  color: #1a1a1a !important;
+  border-bottom-color: rgba(0,0,0,0.06) !important;
+  background: none !important;
 }
-html[data-theme="light"] .yt2-item-active,
-html[data-theme="light"] .yt2-item:hover { border-color: rgba(200,116,94,0.4) !important; background: rgba(200,116,94,0.06) !important; }
+html[data-theme="light"] .yt2-item:hover { background: rgba(0,0,0,0.04) !important; }
+html[data-theme="light"] .yt2-item-active { background: rgba(200,116,94,0.08) !important; }
 html[data-theme="light"] .yt2-item-name { color: #0f0f1e !important; }
-html[data-theme="light"] .yt2-item-role,
-html[data-theme="light"] .yt2-item-stats { color: rgba(0,0,0,0.5) !important; }
-html[data-theme="light"] .yt2-player-wrap {
-  background: #e8e2db !important;
-  border-color: rgba(0,0,0,0.1) !important;
-}
+html[data-theme="light"] .yt2-item-role { color: rgba(0,0,0,0.45) !important; }
+html[data-theme="light"] .yt2-item-stats { color: #c8745e !important; }
+html[data-theme="light"] .yt2-thumb-placeholder { background: linear-gradient(135deg, #e8e2db, #ddd5cc) !important; }
+html[data-theme="light"] .yt2-thumb-placeholder svg { fill: rgba(0,0,0,0.3) !important; }
 
 /* ── Dashboard ── */
 html[data-theme="light"] .ggdash-home {
@@ -3740,8 +3758,10 @@ html[data-theme="light"] .gg-careers__sub { color: #1a1a1a !important; }
 html[data-theme="light"] .cr-section {
   background: linear-gradient(180deg, #f0eaf8 0%, #f7f4f0 100%) !important;
 }
+html[data-theme="light"] .cr-eyebrow { color: #c8745e !important; }
 html[data-theme="light"] .cr-title { color: #0f0f1e !important; }
 html[data-theme="light"] .cr-sub { color: rgba(0,0,0,0.5) !important; }
+html[data-theme="light"] .cr-card { box-shadow: 0 4px 24px rgba(0,0,0,0.12) !important; }
 
 /* ── Contact form ── */
 html[data-theme="light"] .ggcontact { background: #f7f4f0 !important; color: #1a1a1a !important; }
@@ -3818,10 +3838,43 @@ html[data-theme="light"] .cs-index-eyebrow { color: #c8745e !important; }
 html[data-theme="light"] .cs-index-h1 { color: #0f0f1e !important; }
 html[data-theme="light"] .cs-index-sub { color: rgba(0,0,0,0.5) !important; }
 
+/* ── Marquee text ── */
+html[data-theme="light"] .marquee .item { color: rgba(0,0,0,0.45) !important; }
+
+/* ── Footer copyright ── */
+html[data-theme="light"] .copyright p { color: rgba(0,0,0,0.45) !important; }
+html[data-theme="light"] .ggfooter-col-label { color: #c8745e !important; }
+
+/* ── Generic cards / modals with dark bg ── */
+html[data-theme="light"] .gg-modal-inner { color: #1a1a1a !important; }
+html[data-theme="light"] .gg-card { background: #fff !important; border-color: rgba(0,0,0,0.1) !important; }
+html[data-theme="light"] .gg-card__body p,
+html[data-theme="light"] .gg-card__body span { color: rgba(0,0,0,0.6) !important; }
+
+/* ── Svc/case-study detail pages ── */
+html[data-theme="light"] .svc-hero,
+html[data-theme="light"] .svc-body,
+html[data-theme="light"] .svc-detail-body { background: #f7f4f0 !important; color: #1a1a1a !important; }
+html[data-theme="light"] .svc-detail-eyebrow { color: #c8745e !important; }
+html[data-theme="light"] .svc-detail-sub,
+html[data-theme="light"] .svc-desc { color: rgba(0,0,0,0.6) !important; }
+html[data-theme="light"] .svc-card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,0.1) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+}
+html[data-theme="light"] .svc-card h3,
+html[data-theme="light"] .svc-card-title { color: #0f0f1e !important; }
+html[data-theme="light"] .svc-card p { color: rgba(0,0,0,0.55) !important; }
+html[data-theme="light"] .svc-platform-tag { background: #fff !important; border-color: rgba(0,0,0,0.15) !important; color: #1a1a1a !important; }
+html[data-theme="light"] .svc-cs-link { color: #c8745e !important; }
+
 /* ── Global heading/text fallback ── */
 html[data-theme="light"] h1,
 html[data-theme="light"] h2,
 html[data-theme="light"] h3,
 html[data-theme="light"] h4,
 html[data-theme="light"] h5 { color: #0f0f1e; }
+html[data-theme="light"] p { color: rgba(15,15,30,0.65); }
+html[data-theme="light"] a { color: inherit; }
 html[data-theme="light"] p { color: rgba(15,15,30,0.6); }
