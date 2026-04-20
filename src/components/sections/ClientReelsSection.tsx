@@ -216,12 +216,24 @@ export default function ClientReelsSection() {
         .cr-mute-btn:hover { background: rgba(0,0,0,0.85); }
 
         @media (max-width: 768px) {
+          .cr-section { padding: 2rem 0 2rem; }
+          .cr-header { padding: 0 1rem; }
           .cr-grid {
-            grid-template-columns: 1fr;
-            max-width: 340px;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 1rem;
+            padding: 0.5rem 1rem 1.25rem;
+            scrollbar-width: none;
           }
-          .cr-section { padding: 2rem 1rem; }
+          .cr-grid::-webkit-scrollbar { display: none; }
+          .cr-card {
+            flex: 0 0 72vw;
+            max-width: 280px;
+            scroll-snap-align: center;
+          }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
           .cr-grid { grid-template-columns: repeat(2, 1fr); }
