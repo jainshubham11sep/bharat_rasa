@@ -127,7 +127,7 @@ export default function TestimonialsSection() {
         <div className="yt2-thumb">
           {thumbs[i]
             ? <img src={thumbs[i]} alt={t.name} className="yt2-thumb-img" />
-            : <div className="yt2-thumb-placeholder"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,0.3)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            : <div className="yt2-thumb-placeholder"><svg width="14" height="14" viewBox="0 0 24 24" className="yt2-thumb-placeholder-icon"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
           }
           {i === current && playing && (
             <div className="yt2-bars">
@@ -355,6 +355,7 @@ export default function TestimonialsSection() {
           background: var(--c-thumb-bg);
           display: flex; align-items: center; justify-content: center;
         }
+        .yt2-thumb-placeholder-icon { fill: rgba(255,255,255,0.35); }
         .yt2-bars {
           position: absolute; inset: 0; background: rgba(0,0,0,0.45);
           display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; gap: 3px;
