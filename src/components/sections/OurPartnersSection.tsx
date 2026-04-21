@@ -140,30 +140,35 @@ export default function OurPartnersSection() {
           line-height: 1.4;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+          .op-section { padding: 2.5rem 0; }
+          .op-header { padding: 0 1.25rem; }
           .op-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
             gap: 0.85rem;
+            padding: 0.5rem 1.25rem 1rem;
+            scrollbar-width: none;
+            justify-content: flex-start;
           }
+          .op-grid::-webkit-scrollbar { display: none; }
           .op-card {
-            width: calc(50% - 0.85rem);
-            min-width: 130px;
+            flex: 0 0 130px;
+            width: 130px;
+            scroll-snap-align: start;
+            padding: 1rem 0.85rem 0.75rem;
           }
           .op-card--wide {
-            width: 100%;
-            max-width: 300px;
-            flex-direction: row;
-            padding: 1rem 1.5rem;
-            justify-content: flex-start;
-            gap: 1rem;
+            flex: 0 0 150px;
+            width: 150px;
           }
-          .op-card--wide .op-img-wrap {
-            width: 100px;
-            height: 55px;
-            flex-shrink: 0;
-          }
-          .op-card--wide .op-label {
-            text-align: left;
-          }
+          .op-img-wrap { height: 80px; }
+          .op-card--wide .op-img-wrap { height: 70px; }
+          .op-label { font-size: 0.68rem; }
         }
       `}</style>
     </section>
