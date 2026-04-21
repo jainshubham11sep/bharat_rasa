@@ -313,32 +313,13 @@ export default function ContactForm() {
       </form>
 
       <style>{`
-        .ggc-err {
-          display: block;
-          margin-top: 0.25rem;
-          font-size: 0.76rem;
-          color: #f87171;
-          font-weight: 500;
-        }
-        .ggc-input-err {
-          border-color: #f87171 !important;
-          background: rgba(248,113,113,0.06) !important;
-        }
-        .ggc-optional {
-          font-size: 0.74rem;
-          color: rgba(255,255,255,0.35);
-          font-weight: 400;
-          margin-left: 0.25rem;
-        }
+        .ggc-err { display: block; margin-top: 0.25rem; font-size: 0.76rem; color: #f87171; font-weight: 500; }
+        .ggc-input-err { border-color: #f87171 !important; background: rgba(248,113,113,0.06) !important; }
+        .ggc-optional { font-size: 0.74rem; color: var(--c-text-3); font-weight: 400; margin-left: 0.25rem; }
         .ggc-global-err {
-          margin-top: 0.75rem;
-          padding: 0.7rem 1rem;
-          background: rgba(248,113,113,0.1);
-          border: 1px solid rgba(248,113,113,0.3);
-          border-radius: 8px;
-          color: #f87171;
-          font-size: 0.84rem;
-          font-weight: 500;
+          margin-top: 0.75rem; padding: 0.7rem 1rem;
+          background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3);
+          border-radius: 8px; color: #f87171; font-size: 0.84rem; font-weight: 500;
         }
       `}</style>
     </div>

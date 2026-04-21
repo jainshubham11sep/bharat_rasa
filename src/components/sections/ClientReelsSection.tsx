@@ -142,8 +142,8 @@ export default function ClientReelsSection() {
         .cr-section {
           width: 100%;
           padding: 2.5rem 1.25rem;
-          background: linear-gradient(180deg, #0a0a14 0%, #000 100%);
-          color: #fff;
+          background: linear-gradient(180deg, var(--c-bg-alt) 0%, var(--c-bg) 100%);
+          color: var(--c-text);
           font-family: Inter, system-ui, sans-serif;
           box-sizing: border-box;
         }
@@ -155,9 +155,9 @@ export default function ClientReelsSection() {
           color: rgba(224,166,149,0.9); margin-bottom: 0.4rem;
         }
         .cr-title {
-          font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 800; margin: 0 0 0.5rem;
+          font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 800; margin: 0 0 0.5rem; color: var(--c-text);
         }
-        .cr-sub { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin: 0; }
+        .cr-sub { color: var(--c-text-2); font-size: 0.9rem; margin: 0; }
 
         .cr-grid {
           display: grid;
@@ -170,10 +170,10 @@ export default function ClientReelsSection() {
           position: relative;
           border-radius: 16px;
           overflow: hidden;
-          background: #111;
+          background: var(--c-bg-card-solid);
           aspect-ratio: 9/16;
           cursor: pointer;
-          box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+          box-shadow: 0 4px 24px var(--c-shadow);
         }
 
         .cr-video {
@@ -184,7 +184,7 @@ export default function ClientReelsSection() {
         .cr-caption-wrap {
           position: absolute; bottom: 0; left: 0; right: 0;
           padding: 2.5rem 1rem 1rem;
-          background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+          background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, transparent 100%);
           pointer-events: none;
         }
         .cr-caption {
@@ -197,7 +197,7 @@ export default function ClientReelsSection() {
         .cr-play-btn {
           position: absolute; inset: 0;
           display: flex; align-items: center; justify-content: center;
-          background: rgba(0,0,0,0.3); border: none; cursor: pointer;
+          background: var(--c-bg-overlay); border: none; cursor: pointer;
         }
         .cr-play-circle {
           width: 56px; height: 56px; border-radius: 50%;
@@ -208,12 +208,12 @@ export default function ClientReelsSection() {
         .cr-mute-btn {
           position: absolute; top: 0.75rem; right: 0.75rem;
           width: 34px; height: 34px; border-radius: 50%;
-          background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2);
+          background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.2);
           display: flex; align-items: center; justify-content: center;
           cursor: pointer; z-index: 10; backdrop-filter: blur(4px);
           transition: background 0.15s;
         }
-        .cr-mute-btn:hover { background: rgba(0,0,0,0.85); }
+        .cr-mute-btn:hover { background: rgba(0,0,0,0.8); }
 
         @media (max-width: 768px) {
           .cr-section { padding: 2rem 0 2rem; }

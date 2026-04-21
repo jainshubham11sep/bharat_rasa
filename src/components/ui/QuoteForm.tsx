@@ -279,7 +279,7 @@ export default function QuoteForm({ service = "" }: Props) {
 
       <style>{`
         .qf-wrap {
-          color: #fff;
+          color: var(--c-text);
           font-family: Inter, system-ui, sans-serif;
         }
         .qf-head { margin-bottom: 1.5rem; }
@@ -287,69 +287,59 @@ export default function QuoteForm({ service = "" }: Props) {
           font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
           text-transform: uppercase; color: rgba(224,166,149,0.9); margin: 0 0 0.35rem;
         }
-        .qf-title { font-size: 1.4rem; font-weight: 800; margin: 0 0 0.35rem; }
-        .qf-sub { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin: 0; }
+        .qf-title { font-size: 1.4rem; font-weight: 800; margin: 0 0 0.35rem; color: var(--c-text); }
+        .qf-sub { font-size: 0.85rem; color: var(--c-text-2); margin: 0; }
 
         .qf-form { display: flex; flex-direction: column; gap: 1rem; }
 
-        .qf-grid2 {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.85rem;
-        }
+        .qf-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
         @media (max-width: 540px) { .qf-grid2 { grid-template-columns: 1fr; } }
 
         .qf-field { display: flex; flex-direction: column; gap: 0.35rem; }
-        .qf-field label {
-          font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.8);
-        }
+        .qf-field label { font-size: 0.8rem; font-weight: 600; color: var(--c-text-2); }
         .qf-req { color: #e0a695; }
-        .qf-optional { font-size: 0.74rem; color: rgba(255,255,255,0.35); font-weight: 400; margin-left: 0.25rem; }
+        .qf-optional { font-size: 0.74rem; color: var(--c-text-3); font-weight: 400; margin-left: 0.25rem; }
 
         .qf-field input,
         .qf-field select,
         .qf-field textarea {
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.12);
+          background: var(--c-bg-input);
+          border: 1px solid var(--c-border);
           border-radius: 8px;
-          color: #fff;
+          color: var(--c-text);
           font-size: 0.875rem;
           padding: 0.6rem 0.85rem;
           width: 100%;
           box-sizing: border-box;
-          transition: border-color 0.15s;
+          transition: border-color 0.15s, background 0.15s;
           font-family: inherit;
         }
         .qf-field input::placeholder,
-        .qf-field textarea::placeholder { color: rgba(255,255,255,0.3); }
+        .qf-field textarea::placeholder { color: var(--c-text-3); }
         .qf-field input:focus,
         .qf-field select:focus,
         .qf-field textarea:focus {
           outline: none;
           border-color: rgba(224,166,149,0.6);
-          background: rgba(255,255,255,0.09);
+          background: var(--c-bg-input);
         }
-        .qf-field select option { background: #1a1a2e; color: #fff; }
+        .qf-field select option { background: var(--c-select-opt); color: var(--c-text); }
         .qf-field textarea { resize: vertical; }
 
         .qf-phone { display: flex; gap: 0.5rem; }
         .qf-phone select { width: auto; flex-shrink: 0; padding: 0.6rem 0.5rem; }
         .qf-phone input { flex: 1; }
 
-        .qf-chips {
-          display: flex; flex-wrap: wrap; gap: 0.5rem;
-        }
+        .qf-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .qf-chip {
           display: flex; align-items: center; gap: 0.4rem;
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.12);
+          background: var(--c-bg-input);
+          border: 1px solid var(--c-border);
           border-radius: 999px;
           padding: 0.38rem 0.85rem;
-          cursor: pointer;
-          font-size: 0.78rem;
-          font-weight: 500;
-          transition: all 0.15s;
-          user-select: none;
+          cursor: pointer; font-size: 0.78rem; font-weight: 500;
+          color: var(--c-text-2);
+          transition: all 0.15s; user-select: none;
         }
         .qf-chip:has(input:checked) {
           background: rgba(224,166,149,0.18);

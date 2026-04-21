@@ -238,8 +238,8 @@ export default function TestimonialsSection() {
         .yt2-section {
           width: 100%;
           padding: 2.5rem 1.25rem;
-          background: linear-gradient(180deg, #000 0%, #0a0a14 100%);
-          color: #fff;
+          background: linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg-alt) 100%);
+          color: var(--c-text);
           font-family: Inter, system-ui, sans-serif;
           box-sizing: border-box;
         }
@@ -250,7 +250,7 @@ export default function TestimonialsSection() {
           letter-spacing: 0.12em; text-transform: uppercase;
           color: rgba(224,166,149,0.9); margin-bottom: 0.4rem;
         }
-        .yt2-title { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 800; margin: 0; }
+        .yt2-title { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 800; margin: 0; color: var(--c-text); }
 
         /* ── Layout ── */
         .yt2-layout {
@@ -264,7 +264,8 @@ export default function TestimonialsSection() {
         .yt2-player-col { display: flex; flex-direction: column; gap: 0.75rem; }
         .yt2-player-wrap {
           position: relative; width: 100%; aspect-ratio: 16/9;
-          background: #000; border-radius: 12px; overflow: hidden;
+          background: var(--c-bg-card-solid); border-radius: 12px; overflow: hidden;
+          border: 1px solid var(--c-border);
         }
         .yt2-video {
           width: 100%; height: 100%; object-fit: cover;
@@ -273,7 +274,7 @@ export default function TestimonialsSection() {
         .yt2-play-btn {
           position: absolute; inset: 0; display: flex;
           align-items: center; justify-content: center;
-          background: rgba(0,0,0,0.35); border: none; cursor: pointer;
+          background: var(--c-bg-overlay); border: none; cursor: pointer;
         }
         .yt2-play-circle {
           width: 60px; height: 60px; border-radius: 50%;
@@ -283,75 +284,75 @@ export default function TestimonialsSection() {
         .yt2-mute-btn {
           position: absolute; bottom: 2.8rem; right: 0.75rem;
           width: 36px; height: 36px; border-radius: 50%;
-          background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2);
+          background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.2);
           display: flex; align-items: center; justify-content: center;
           cursor: pointer; z-index: 10; backdrop-filter: blur(4px);
           transition: background 0.15s;
         }
-        .yt2-mute-btn:hover { background: rgba(0,0,0,0.85); }
+        .yt2-mute-btn:hover { background: rgba(0,0,0,0.8); }
 
         .yt2-caption {
           position: absolute; bottom: 0; left: 0; right: 0;
-          padding: 0.55rem 0.9rem; background: rgba(0,0,0,0.78);
+          padding: 0.55rem 0.9rem; background: var(--c-bg-caption);
           pointer-events: none;
         }
         .yt2-caption-text {
-          font-size: 0.8rem; font-weight: 500; color: #fff;
+          font-size: 0.8rem; font-weight: 500; color: var(--c-text);
           white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;
         }
         .yt2-meta {
           display: flex; align-items: center;
           justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;
         }
-        .yt2-meta-name { font-size: 0.95rem; font-weight: 700; }
-        .yt2-meta-role { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+        .yt2-meta-name { font-size: 0.95rem; font-weight: 700; color: var(--c-text); }
+        .yt2-meta-role { font-size: 0.78rem; color: var(--c-text-3); margin-top: 2px; }
         .yt2-chip {
           display: inline-flex; align-items: center;
           padding: 0.4rem 0.9rem;
           border: 1px solid rgba(224,166,149,0.35); border-radius: 9999px;
           font-size: 0.74rem; font-weight: 700;
-          color: rgba(240,200,190,0.95); background: rgba(224,166,149,0.12);
+          color: rgba(224,166,149,0.95); background: rgba(224,166,149,0.12);
           text-decoration: none; white-space: nowrap;
         }
 
         /* ── Playlist ── */
         .yt2-playlist-col {
           display: flex; flex-direction: column;
-          background: #0f0f0f; border-radius: 12px;
-          overflow: hidden; border: 1px solid rgba(255,255,255,0.07);
+          background: var(--c-bg-playlist); border-radius: 12px;
+          overflow: hidden; border: 1px solid var(--c-border);
         }
         .yt2-playlist-header {
           display: flex; align-items: center; justify-content: space-between;
-          padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.07); flex-shrink: 0;
+          padding: 0.75rem 1rem; border-bottom: 1px solid var(--c-border); flex-shrink: 0;
         }
-        .yt2-playlist-label { font-size: 0.8rem; font-weight: 700; color: #fff; }
-        .yt2-playlist-count { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+        .yt2-playlist-label { font-size: 0.8rem; font-weight: 700; color: var(--c-text); }
+        .yt2-playlist-count { font-size: 0.72rem; color: var(--c-text-3); }
         .yt2-playlist-scroll {
           overflow-y: auto; max-height: 420px;
         }
         .yt2-playlist-scroll::-webkit-scrollbar { width: 3px; }
-        .yt2-playlist-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+        .yt2-playlist-scroll::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 2px; }
 
         /* ── Playlist item ── */
         .yt2-item {
           display: flex; align-items: flex-start; gap: 0.6rem;
           width: 100%; padding: 0.6rem 0.85rem;
           background: none; border: none;
-          border-bottom: 1px solid rgba(255,255,255,0.04);
-          cursor: pointer; text-align: left; color: #fff;
+          border-bottom: 1px solid var(--c-border-sub);
+          cursor: pointer; text-align: left; color: var(--c-text);
           transition: background 0.15s;
         }
-        .yt2-item:hover { background: rgba(255,255,255,0.04); }
+        .yt2-item:hover { background: var(--c-bg-card); }
         .yt2-item-active { background: rgba(224,166,149,0.1) !important; }
 
         .yt2-thumb {
           position: relative; width: 76px; height: 50px;
-          border-radius: 6px; overflow: hidden; background: #1a1a2a; flex-shrink: 0;
+          border-radius: 6px; overflow: hidden; background: var(--c-thumb-bg); flex-shrink: 0;
         }
         .yt2-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .yt2-thumb-placeholder {
           width: 100%; height: 100%;
-          background: linear-gradient(135deg, #1a1a2e, #16213e);
+          background: var(--c-thumb-bg);
           display: flex; align-items: center; justify-content: center;
         }
         .yt2-bars {
@@ -368,11 +369,11 @@ export default function TestimonialsSection() {
         }
         .yt2-item-info { flex: 1; min-width: 0; }
         .yt2-item-name {
-          font-size: 0.8rem; font-weight: 700; color: #fff;
+          font-size: 0.8rem; font-weight: 700; color: var(--c-text);
           white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
         .yt2-item-role {
-          font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 2px;
+          font-size: 0.7rem; color: var(--c-text-3); margin-top: 2px;
           white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
         .yt2-item-stats {
@@ -393,12 +394,8 @@ export default function TestimonialsSection() {
             gap: 1rem;
           }
           .yt2-play-circle { width: 48px; height: 48px; }
-          .yt2-playlist-col {
-            border-radius: 10px;
-          }
-          .yt2-playlist-scroll {
-            max-height: 280px;
-          }
+          .yt2-playlist-col { border-radius: 10px; }
+          .yt2-playlist-scroll { max-height: 280px; }
           .yt2-thumb { width: 68px; height: 44px; }
         }
       `}</style>

@@ -169,24 +169,25 @@ export default function Footer() {
           padding: 2.5rem 0 1.5rem;
         }
         .ggfooter-brand { display: flex; flex-direction: column; gap: 0.75rem; }
-        .ggfooter-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.6; max-width: 280px; }
+        .ggfooter-tagline { font-size: 0.82rem; color: var(--c-text-3); margin: 0; line-height: 1.6; max-width: 280px; }
         .ggfooter-phones { display: flex; flex-direction: column; gap: 0.35rem; }
         .ggfooter-phone {
           display: flex; align-items: center; gap: 0.45rem;
-          font-size: 0.83rem; color: rgba(255,255,255,0.7); text-decoration: none;
+          font-size: 0.83rem; color: var(--c-text-2); text-decoration: none;
           transition: color 0.15s;
         }
         .ggfooter-phone:hover { color: #e0a695; }
         .ggfooter-address {
           display: flex; gap: 0.45rem; align-items: flex-start;
-          font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.6;
+          font-size: 0.78rem; color: var(--c-text-3); line-height: 1.6;
         }
         .ggfooter-col-label {
           font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
           text-transform: uppercase; color: #e0a695; margin-bottom: 1rem;
         }
         .ggfooter-links-col .footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
-        .ggfooter-links-col .footer-links a { font-size: 0.85rem; }
+        .ggfooter-links-col .footer-links a { font-size: 0.85rem; color: var(--c-text-2); text-decoration: none; transition: color 0.15s; }
+        .ggfooter-links-col .footer-links a:hover { color: #e0a695; }
         .ggfooter-socials { display: flex; flex-direction: column; gap: 0.85rem; }
         .ggfooter-social-item {
           display: flex; align-items: center; gap: 0.6rem;
@@ -199,8 +200,8 @@ export default function Footer() {
           display: flex; align-items: center; justify-content: center;
           color: #e0a695; flex-shrink: 0;
         }
-        .ggfooter-social-name { display: block; font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.85); }
-        .ggfooter-social-sub { display: block; font-size: 0.7rem; color: rgba(255,255,255,0.35); }
+        .ggfooter-social-name { display: block; font-size: 0.82rem; font-weight: 600; color: var(--c-text); }
+        .ggfooter-social-sub { display: block; font-size: 0.7rem; color: var(--c-text-3); }
 
         @media (max-width: 900px) {
           .ggfooter-grid { grid-template-columns: 1fr 1fr; }
