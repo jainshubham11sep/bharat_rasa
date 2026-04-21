@@ -2038,17 +2038,16 @@ img { max-width: 100%; height: auto; }
 .ggfooter .logo a { text-decoration: none; }
 .ggfooter .footer-links {
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 .ggfooter .footer-links a {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--c-text-2);
   text-decoration: none;
   transition: color 0.2s;
 }
-.ggfooter .footer-links a:hover { color: var(--c-text); }
+.ggfooter .footer-links a:hover { color: #e0a695; }
 .ggfooter .copyright {
   border-top: 1px solid var(--c-border);
   padding: 1.25rem 1.5rem;
@@ -3566,18 +3565,24 @@ html[data-theme="light"] .theme-toggle:hover { background: rgba(0,0,0,0.12); }
    terracotta (#c8745e / #e0a695) accent — NO blue/purple.
    ============================================================ */
 
-/* ── Logo: white PNG needs dark pill background ── */
-html[data-theme="light"] .brand-logo-link {
+/* ── Logo: white PNG needs dark pill background everywhere ── */
+html[data-theme="light"] .brand-logo-link,
+html[data-theme="light"] .footer-logo-link {
+  display: inline-flex;
   background: #1a1a2e;
   border-radius: 10px;
   padding: 5px 12px;
 }
-html[data-theme="light"] .drawer-brand-link img,
-html[data-theme="light"] .gghxw2 .logo {
-  filter: brightness(0) invert(1);
+html[data-theme="light"] .drawer-brand-link {
+  display: inline-flex;
   background: #1a1a2e;
   border-radius: 8px;
-  padding: 4px 8px;
+  padding: 4px 10px;
+}
+html[data-theme="light"] .gghxw2 .logo {
+  background: #1a1a2e;
+  border-radius: 8px;
+  padding: 6px 10px;
 }
 
 /* ── Navbar ── */
@@ -3720,21 +3725,38 @@ html[data-theme="light"] .gg-cs {
 html[data-theme="light"] .gg-cs .gg-cs__h2 { color: #0f0f1e !important; }
 html[data-theme="light"] .gg-cs .gg-cs__p { color: rgba(15,15,30,0.55) !important; }
 html[data-theme="light"] .gg-cs .gg-cs__stars { color: rgba(0,0,0,0.1) !important; }
-html[data-theme="light"] .gg-cs .gg-cs__card {
+html[data-theme="light"] .gg-card {
   background: #ffffff !important;
-  border-color: rgba(0,0,0,0.08) !important;
+  border-color: rgba(0,0,0,0.09) !important;
   box-shadow: 0 2px 20px rgba(0,0,0,0.07) !important;
+  color: #0f0f1e !important;
 }
-html[data-theme="light"] .gg-cs .gg-cs__card:hover { border-color: rgba(200,116,94,0.28) !important; }
-html[data-theme="light"] .gg-cs .gg-cs__title { color: #0f0f1e !important; }
-html[data-theme="light"] .gg-cs .gg-cs__desc { color: rgba(15,15,30,0.55) !important; }
-html[data-theme="light"] .gg-cs .gg-cs__tag {
-  color: rgba(15,15,30,0.48) !important;
-  border-color: rgba(0,0,0,0.1) !important;
-  background: rgba(0,0,0,0.04) !important;
+html[data-theme="light"] .gg-card:hover {
+  background: #fffaf8 !important;
+  border-color: rgba(200,116,94,0.3) !important;
+  transform: translateY(-3px) !important;
 }
-html[data-theme="light"] .gg-cs .gg-cs__kpi-val { color: #0f0f1e !important; }
-html[data-theme="light"] .gg-cs .gg-cs__kpi-label { color: rgba(15,15,30,0.48) !important; }
+html[data-theme="light"] .gg-card__title { color: #0f0f1e !important; }
+html[data-theme="light"] .gg-card__desc { color: rgba(15,15,30,0.58) !important; }
+html[data-theme="light"] .gg-card__link {
+  border-color: rgba(0,0,0,0.14) !important;
+  color: #0f0f1e !important;
+}
+html[data-theme="light"] .gg-card__link:hover { background: rgba(0,0,0,0.05) !important; }
+html[data-theme="light"] .gg-card__logo-text {
+  background: linear-gradient(135deg, rgba(200,116,94,0.15), rgba(224,166,149,0.15)) !important;
+  border-color: rgba(200,116,94,0.3) !important;
+  color: #b85c47 !important;
+}
+html[data-theme="light"] .gg-card__kpis {
+  border-top-color: rgba(0,0,0,0.08) !important;
+}
+html[data-theme="light"] .gg-kpi__val { color: #0f0f1e !important; }
+html[data-theme="light"] .gg-kpi__lab { color: rgba(15,15,30,0.48) !important; }
+/* KPI value colors — use deeper, readable shades on white */
+html[data-theme="light"] .gg-green { color: #15803d !important; }
+html[data-theme="light"] .gg-blue { color: #1d4ed8 !important; }
+html[data-theme="light"] .gg-blue-soft { color: #2563eb !important; }
 
 /* ── Clients Carousel ── */
 html[data-theme="light"] .gg-cc-section { background: #ffffff !important; }
@@ -3912,7 +3934,8 @@ html[data-theme="light"] .marquee-outer {
   border-top-color: rgba(0,0,0,0.07) !important;
 }
 html[data-theme="light"] .marquee .item { color: rgba(15,15,30,0.38) !important; }
-html[data-theme="light"] .ggfooter .footer-links a { color: rgba(15,15,30,0.52) !important; }
+html[data-theme="light"] .ggfooter .footer-links { flex-direction: column !important; gap: 0.6rem !important; }
+html[data-theme="light"] .ggfooter .footer-links a { color: rgba(15,15,30,0.58) !important; font-size: 0.85rem !important; }
 html[data-theme="light"] .ggfooter .footer-links a:hover { color: #c8745e !important; }
 html[data-theme="light"] .ggfooter .logo .brand { color: #0f0f1e !important; }
 html[data-theme="light"] .ggfooter .copyright { border-top-color: rgba(0,0,0,0.07) !important; }

@@ -78,7 +78,7 @@ export default function Footer() {
 
             {/* Brand col */}
             <div className="ggfooter-brand">
-              <Link href="/">
+              <Link href="/" className="footer-logo-link">
                 <Image
                   src="/images/bharat_innovation_logo.png"
                   alt="Bharat Innovations"
