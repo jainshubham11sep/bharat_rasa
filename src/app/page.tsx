@@ -25,6 +25,7 @@ import ClientReelsSection from "@/components/sections/ClientReelsSection";
 import AboutCardSection from "@/components/sections/AboutCardSection";
 import CareersSection from "@/components/sections/CareersSection";
 import FAQSection from "@/components/sections/FAQSection";
+import OurPartnersSection from "@/components/sections/OurPartnersSection";
 
 export default function HomePage() {
   return (
@@ -32,6 +33,7 @@ export default function HomePage() {
       <HeroSection />
       {/* <AboutSection /> */}
       <ClientsSection />
+      <OurPartnersSection />
       <CaseStudiesSection />
       <PressSection />
       <ServicesSection />
